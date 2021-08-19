@@ -46,7 +46,7 @@ const Header = () => {
           </NavItem>
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to="/signin">Log In</NavBtnLink>
+          <NavBtnLink to="/">Log In</NavBtnLink>
         </NavBtn>
       </NavbarContainer>
     </Nav>

@@ -107,13 +107,14 @@ const NavBtn = styled.nav`
 `;
 
 const NavBtnLink = styled(LinkRouter)`
+  margin: 0 auto;
   outline: none;
   border: none;
   border-radius: 0.75rem;
   background: #01bf71;
   white-space: nowrap;
   padding: 0.5rem 2.4rem;
-  color: #010606;
+  color: #f2f2f2;
   font-size: 1.8rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
