@@ -27,13 +27,17 @@ const HLine = styled.div`
   height: 1px;
   width: 85%;
   background-color: #c2d1d9;
+  @media only screen and (min-width: 420px) {
+    display: none;
+  }
 `;
 const InfoWrapper = styled.div`
   width: 85%;
+  max-width: 768px;
   padding: 32px 0;
-  /* 
+
   display: flex;
-  flex-flow: column wrap; */
+  flex-flow: row wrap;
   /* justify-content: center; */
   /* align-items: center; */
 `;

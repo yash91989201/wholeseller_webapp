@@ -39,8 +39,8 @@ const products = [
 const ProductShowcase = () => {
   return (
     <Container>
+      <Heading>Our Products</Heading>
       <Wrapper>
-        <Heading>Our Products</Heading>
         <Products>
           {products.map((product) => (
             <ProductCard key={product.key}>

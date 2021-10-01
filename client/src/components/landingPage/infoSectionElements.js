@@ -7,6 +7,7 @@ import {
 
 const Container = styled(defaultContainer)`
   ${makeUnselectable}
+  flex-flow:column nowrap;
 `;
 const Wrapper = styled.div`
   width: 85%;
@@ -16,19 +17,21 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 const Image = styled.img`
-  max-width: 1100px;
+  max-width: 420px;
   width: 100%;
+  padding: 32px 0;
 `;
 const TextWrapper = styled.div`
   max-width: 400px;
-  padding: 16px 0;
 `;
 const Heading = styled.h1`
-  padding: 16px 0;
   text-align: center;
 `;
 const Description = styled.p`
   line-height: 24px;
+  letter-spacing: 1.0625px;
+  font-weight: 500;
+  padding: 0 24px;
 `;
 
 export { Container, Wrapper, Image, TextWrapper, Heading, Description };

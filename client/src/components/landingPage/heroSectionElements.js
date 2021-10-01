@@ -18,11 +18,21 @@ const Wrapper = styled.div`
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
+  @media screen and (min-width: 768px) {
+    padding: 24px 0;
+    flex-flow: row nowrap;
+  }
 `;
 
 // container
 const Image = styled.img`
   width: 100%;
+  max-width: 480px;
+  padding: 2vh;
+  @media screen and (min-width: 768px) {
+    width: 80%;
+    max-width: 700px;
+  }
 `;
 
 // container

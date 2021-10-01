@@ -9,6 +9,7 @@ import {
 
 const Container = styled(defaultContainer)`
   ${makeUnselectable}
+  flex-flow:column nowrap;
 `;
 
 const Wrapper = styled.div`
@@ -20,13 +21,14 @@ const Wrapper = styled.div`
 const Heading = styled.h1`
   padding: 16px 0;
   text-align: center;
+  font-size: 2.25vw;
 `;
 
 const Products = styled.div`
+  padding: 16px;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 0 auto;
 `;
 
 const ProductCard = styled.div`
@@ -36,9 +38,12 @@ const ProductCard = styled.div`
   display: flex;
   flex-flow: column nowrap;
   border: 1px solid #a1aeb7;
+  border-radius: 5px;
 `;
 
-const ProductImage = styled.img``;
+const ProductImage = styled.img`
+  border-radius: 5px;
+`;
 
 const TextWrapper = styled.div`
   width: 85%;

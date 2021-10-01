@@ -9,9 +9,8 @@ import { makeUnselectable } from "./utilityStyling.js";
 // 481px — 768px: iPads, Tablets
 // 769px — 1024px: Small screens, laptops
 // 1025px — 1200px: Desktops, large screens
-// 1201px and more —  Extra large screens, TV
 
-const NavbarContainer = styled.div`
+const NavbarContainer = styled.section`
   position: sticky;
   z-index: 99;
   background-color: #f5f5f5;
@@ -52,16 +51,34 @@ const NavLogo = styled(LinkScroll)`
 `;
 
 const NavMenu = styled.ul`
+  list-style-type: none;
+  display: flex;
   @media screen and (max-width: 768px) {
     display: none;
   }
 `;
 
-const NavItem = styled.li``;
+const NavItem = styled.li`
+  margin: 0 16px;
+`;
 
-const NavLink = styled(LinkScroll)``;
+const NavLink = styled(LinkScroll)`
+  padding: 8px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  &:hover {
+    border-radius: 24px;
+    background-color: #424b5a;
+    color: #fff;
+  }
+`;
 
 const NavBtnLink = styled(LinkRouter)`
+  font-size: 18px;
+  &:hover {
+    border-bottom: 1px solid #424b5a;
+    color: #424b5a;
+  }
   @media screen and (max-width: 768px) {
     display: none;
   }

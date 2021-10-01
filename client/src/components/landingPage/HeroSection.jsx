@@ -19,7 +19,6 @@ const HeroSection = () => {
   return (
     <Container>
       <Wrapper>
-        <Image src={heroImageLink} alt="hero image" />
         <Fade left>
           <TextWrapper>
             <Header>Welcome to your online shop</Header>
@@ -35,6 +34,7 @@ const HeroSection = () => {
             </BtnLinkWrapper>
           </TextWrapper>
         </Fade>
+        <Image src={heroImageLink} alt="hero image" />
       </Wrapper>
     </Container>
   );

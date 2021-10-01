@@ -14,10 +14,10 @@ import imageLink from "assets/images/how_it_works.jpg";
 const InfoSection = () => {
   return (
     <Container>
+      <Heading>How It Works?</Heading>
       <Wrapper>
         <Image src={imageLink} alt="how it works" />
         <TextWrapper>
-          <Heading>How It Works?</Heading>
           <Description>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
