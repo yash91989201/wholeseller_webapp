@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Link as LinkScroll } from "react-scroll";
 import { Link as LinkRouter } from "react-router-dom";
 import { GoThreeBars } from "react-icons/go";
-import { VscChromeClose } from "react-icons/vsc";
 import { makeUnselectable } from "./utilityStyling.js";
 
 // 320px — 480px: Mobile devices
@@ -22,20 +21,12 @@ const NavbarContainer = styled.section`
   ${makeUnselectable}
 `;
 
-const BtnStyling = `
-font-size: 24px;
-cursor: pointer;
-@media screen and (min-width: 768px) {
-  display: none;
-}
-`;
-
 const MenuBtn = styled(GoThreeBars)`
-  ${BtnStyling}
-`;
-
-const CloseMenuBtn = styled(VscChromeClose)`
-  ${BtnStyling}
+  font-size: 24px;
+  cursor: pointer;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const NavbarWrapper = styled.nav`
@@ -93,5 +84,4 @@ export {
   NavLink,
   NavBtnLink,
   MenuBtn,
-  CloseMenuBtn,
 };

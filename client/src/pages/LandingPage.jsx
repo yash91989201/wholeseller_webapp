@@ -18,7 +18,7 @@ const LandingPage = () => {
   return (
     <>
       <Navbar menuState={menuState} toggleMenuState={toggleMenuState} />
-      <Sidebar sidebarState={menuState} />
+      <Sidebar sidebarState={menuState} toggleMenuState={toggleMenuState} />
       <HeroSection />
       <ProductShowcase />
       <InfoSection />

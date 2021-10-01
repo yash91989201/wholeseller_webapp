@@ -1,15 +1,25 @@
 import React from "react";
 import {
   SidebarContainer,
+  CloseBtnWrapper,
+  CloseMenuBtn,
   SidebarMenu,
   SidebarMenuItem,
   SidebarLink,
   SidebarBtnLink,
 } from "./sidebarElements";
 
-const Sidebar = ({ sidebarState }) => {
+const Sidebar = ({ sidebarState, toggleMenuState }) => {
   return (
     <SidebarContainer sidebarOpen={sidebarState}>
+      <CloseBtnWrapper>
+        <CloseMenuBtn
+          onClick={() => {
+            toggleMenuState();
+          }}
+        />
+      </CloseBtnWrapper>
+
       <SidebarMenu>
         <SidebarMenuItem>
           <SidebarLink to="/shop">SHOP</SidebarLink>

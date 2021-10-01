@@ -8,7 +8,6 @@ import {
   NavLink,
   NavBtnLink,
   MenuBtn,
-  CloseMenuBtn,
 } from "./navbarElements";
 
 const Navbar = ({ menuState, toggleMenuState }) => {
@@ -32,11 +31,8 @@ const Navbar = ({ menuState, toggleMenuState }) => {
         </NavMenu>
 
         <NavBtnLink to="/logIn">Log In</NavBtnLink>
-        {menuState ? (
-          <CloseMenuBtn onClick={toggleMenuState} />
-        ) : (
-          <MenuBtn onClick={toggleMenuState} />
-        )}
+
+        <MenuBtn onClick={toggleMenuState} />
       </NavbarWrapper>
     </NavbarContainer>
   );

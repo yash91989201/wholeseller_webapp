@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link as LinkRouter } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
+import { VscChromeClose } from "react-icons/vsc";
 
 import { makeUnselectable } from "./utilityStyling";
 
@@ -8,7 +9,7 @@ const SidebarContainer = styled.section`
   position: fixed;
   z-index: 999;
   width: 100%;
-  height: calc(100vh - 80px);
+  height: 100vh;
   background: #505d68;
   color: #fff;
   display: flex;
@@ -23,6 +24,20 @@ const SidebarContainer = styled.section`
     display: none;
   }
   ${makeUnselectable}
+`;
+
+const CloseBtnWrapper = styled.div`
+  width: 100%;
+  text-align: right;
+  padding-right: 24px;
+`;
+
+const CloseMenuBtn = styled(VscChromeClose)`
+  font-size: 24px;
+  cursor: pointer;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const SidebarMenu = styled.ul`
@@ -63,6 +78,8 @@ const SidebarBtnLink = styled(LinkRouter)`
 
 export {
   SidebarContainer,
+  CloseBtnWrapper,
+  CloseMenuBtn,
   SidebarMenu,
   SidebarMenuItem,
   SidebarLink,
