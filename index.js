@@ -7,6 +7,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.listen(3000, (err) => {
+app.listen(PORT, (err) => {
   console.log(`${err ? `${err}` : `Server is started at port 3000`}`);
 });
