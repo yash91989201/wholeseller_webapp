@@ -6,7 +6,7 @@ import {
   Wrapper,
   Image,
   TextWrapper,
-  Header,
+  Heading,
   Description,
   BtnLinkWrapper,
   JoinBtn,
@@ -21,7 +21,7 @@ const HeroSection = () => {
       <Wrapper>
         <Fade left>
           <TextWrapper>
-            <Header>Welcome to your online shop</Header>
+            <Heading>Welcome to your online shop</Heading>
             <Description>
               If you’re looking for the latest in wireless headphones, look no
               further. These are perfect for TV, stereo, home, and cell phone.

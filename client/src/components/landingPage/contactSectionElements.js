@@ -1,75 +1,105 @@
-import styled from "styled-components";
-
+import styled, { css } from "styled-components";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
-import { defaultContainer } from "../shared/utilityStyling";
+import {
+  defaultContainer,
+  defaultHeading,
+  makeUnselectable,
+} from "../shared/utilityStyling";
 
 const Container = styled(defaultContainer)`
+  ${makeUnselectable}
+
+  /* Display and Box Model  Properties*/
   flex-flow: row nowrap;
 `;
+
 const Wrapper = styled.div`
+  /* Display and Box Model  Properties*/
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
 `;
-const Heading = styled.h1`
-  text-align: center;
-  color: #505d68;
+
+const Heading = styled(defaultHeading)`
+  /* Display and Box Model  Properties*/
+  padding: 0;
 `;
+
 const Text = styled.p`
-  text-align: center;
+  /* Display and Box Model  Properties*/
   padding: 24px 0;
+
+  /* Color  Properties*/
   color: #505d68;
+
+  /* Text  Properties*/
+  text-align: center;
 `;
+
 const HLine = styled.div`
-  height: 1px;
+  /* Display and Box Model  Properties*/
   width: 85%;
+  height: 1px;
+
+  /* Color  Properties*/
   background-color: #c2d1d9;
+
+  /* Media Query*/
   @media only screen and (min-width: 420px) {
     display: none;
   }
 `;
-const InfoWrapper = styled.div`
-  width: 85%;
-  max-width: 768px;
-  padding: 32px 0;
 
+const InfoWrapper = styled.div`
+  /* Display and Box Model  Properties*/
+  width: min(768px, 85%);
+  padding: clamp(16px, 8px, 4vh) 0;
   display: flex;
   flex-flow: row wrap;
-  /* justify-content: center; */
-  /* align-items: center; */
+  justify-content: center;
 `;
 const ContactWrapper = styled.div`
-  margin: 16px auto;
+  /* Display and Box Model  Properties*/
+  margin: 16px 32px;
   max-width: 175px;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+
+  /* Text  Properties*/
   letter-spacing: 1.5px;
   text-align: center;
 `;
 const IconWrapper = styled.span`
+  /* Display and Box Model  Properties*/
   width: 75px;
   height: 75px;
   border-radius: 50%;
   position: relative;
-  background-color: #f2f5f7;
-
   display: flex;
   justify-content: center;
   align-content: center;
+
+  /* Color  Properties*/
+  background-color: #f2f5f7;
 `;
 
-const IconStyling = `
+const IconStyling = css`
+  /* Positioning  Properties*/
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px;
+
+  /* Color  Properties*/
   color: #424b5a;
+
+  /* Text  Properties*/
+  font-size: 24px;
 `;
 
 const EmailIcon = styled(MdEmail)`
@@ -83,11 +113,17 @@ const MapMarkerIcon = styled(FaMapMarkerAlt)`
 `;
 
 const Type = styled.p`
-  color: #505d68;
+  /* Display and Box Model  Properties*/
   padding: 8px 0;
+
+  /* Color  Properties*/
+  color: #505d68;
 `;
 const Detail = styled.h4`
+  /* Display and Box Model  Properties*/
   padding: 8px 0;
+
+  /* Color  Properties*/
   color: #a1aeb7;
 `;
 
