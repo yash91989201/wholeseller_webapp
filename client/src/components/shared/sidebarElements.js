@@ -31,7 +31,7 @@ const SidebarContainer = styled.section`
   opacity: ${({ sidebarOpen }) => (sidebarOpen ? "100%" : "0%")};
 
   /* Media Query */
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     /* Display and Box Model  Properties*/
     display: none;
   }
@@ -40,7 +40,7 @@ const SidebarContainer = styled.section`
 const CloseBtnWrapper = styled.div`
   /* Display and Box Model  Properties*/
   width: 100%;
-  padding-right: 32px;
+  padding-right: max(48px, 8vw);
 
   /* Text  Properties*/
   text-align: right;

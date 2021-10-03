@@ -15,7 +15,7 @@ const Container = styled(defaultContainer)`
 
 const Wrapper = styled.div`
   /* Display and Box Model  Properties*/
-  width: 85%;
+  width: 90%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
@@ -31,19 +31,21 @@ const Wrapper = styled.div`
 const Image = styled.img`
   /* Display and Box Model  Properties*/
   width: min(100%, 468px);
-  padding: 32px 0;
+  padding-top: 16px;
+  padding-bottom: 48px;
 `;
 
 const TextWrapper = styled.div`
   /* Display and Box Model  Properties*/
-  max-width: 375px;
+  margin: 0 24px;
+  width: min(80%, 400px);
 `;
 
 const Heading = styled(defaultHeading)``;
 
 const Description = styled.p`
   /* Display and Box Model  Properties*/
-  padding: 0 24px;
+  padding: 0 min(24px, 4vw);
 
   /* Text  Properties*/
   font-weight: 500;

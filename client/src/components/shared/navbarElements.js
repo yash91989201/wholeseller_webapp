@@ -27,7 +27,7 @@ const MenuBtn = styled(GoThreeBars)`
   font-size: 28px;
 
   /* Media Query */
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     /* Display and Box Model  Properties*/
     display: none;
   }
@@ -53,7 +53,7 @@ const NavMenu = styled.ul`
   list-style-type: none;
 
   /* Media Query */
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     /* Display and Box Model  Properties*/
     display: none;
 
@@ -99,7 +99,7 @@ const NavBtnLink = styled(LinkRouter)`
   }
 
   /* Media Query */
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     /* Display and Box Model  Properties*/
     display: none;
   }

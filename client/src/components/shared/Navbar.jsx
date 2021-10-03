@@ -10,7 +10,7 @@ import {
   MenuBtn,
 } from "./navbarElements";
 
-const Navbar = ({ menuState, toggleMenuState }) => {
+const Navbar = ({ toggleMenuState }) => {
   return (
     <NavbarContainer>
       <NavbarWrapper>

@@ -2,16 +2,11 @@ import styled, { css } from "styled-components";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
-import {
-  defaultContainer,
-  defaultHeading,
-  makeUnselectable,
-} from "../shared/utilityStyling";
+import { defaultContainer, defaultHeading } from "../shared/utilityStyling";
 
 const Container = styled(defaultContainer)`
-  ${makeUnselectable}
-
   /* Display and Box Model  Properties*/
+  padding: 24px 0;
   flex-flow: row nowrap;
 `;
 

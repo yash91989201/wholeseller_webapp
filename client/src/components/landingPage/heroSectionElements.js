@@ -37,7 +37,7 @@ const Image = styled.img`
   /* Media Query */
   @media screen and (min-width: 420px) {
     /* Display and Box Model  Properties*/
-    padding: 2.5vw;
+    padding: 2.25vw;
   }
 
   /* Media Query */

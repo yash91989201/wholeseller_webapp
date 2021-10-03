@@ -11,7 +11,8 @@ import {
 const Container = styled(defaultContainer)`
   ${makeUnselectable}
   /* Display and Box Model  Properties*/
-  flex-flow:column nowrap;
+  padding:16px 0;
+  flex-flow: column nowrap;
 `;
 
 const Wrapper = styled.div`
@@ -25,11 +26,11 @@ const Heading = styled(defaultHeading)``;
 
 const Products = styled.div`
   /* Display and Box Model  Properties*/
-  padding: 16px 0;
+  padding: 8px 0;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-  grid-gap: min(40px, 8vw) 0;
+  grid-gap: min(16px, 8vw) 0;
 `;
 
 const ProductCard = styled.div`
