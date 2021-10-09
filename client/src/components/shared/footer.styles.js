@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link as LinkScroll } from "react-scroll";
 import { Link as LinkRouter } from "react-router-dom";
 
-import { defaultContainer, makeUnselectable } from "./utilityStyling";
+import { defaultContainer, makeUnselectable } from "./shared.styles";
 
 const Container = styled(defaultContainer)`
   ${makeUnselectable}
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Logo = styled(LinkScroll)`
+const Logo = styled(LinkRouter)`
   /* Display and Box Model  Properties*/
   padding: 16px 0;
   /* Text Properties */

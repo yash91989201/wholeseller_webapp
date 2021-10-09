@@ -7,7 +7,7 @@ import {
   defaultContainer,
   defaultHeading,
   makeUnselectable,
-} from "components/shared/utilityStyling";
+} from "components/shared/shared.styles";
 
 const Container = styled(defaultContainer)`
   ${makeUnselectable}

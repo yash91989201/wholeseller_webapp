@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
-import { defaultContainer, defaultHeading } from "../shared/utilityStyling";
+import { defaultContainer, defaultHeading } from "../shared/shared.styles";
 
 const Container = styled(defaultContainer)`
   /* Display and Box Model  Properties*/

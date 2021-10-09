@@ -12,12 +12,12 @@ import {
   JoinBtn,
   KnowMoreBtn,
   AnimatedRightArrow,
-} from "./heroSectionElements";
+} from "./heroSection.styles";
 import heroImageLink from "assets/images/hero_image.jpg";
 
 const HeroSection = () => {
   return (
-    <Container>
+    <Container id="heroSection">
       <Wrapper>
         <Fade left>
           <TextWrapper>
@@ -28,7 +28,14 @@ const HeroSection = () => {
             </Description>
             <BtnLinkWrapper>
               <JoinBtn to="/register">JOIN TODAY!</JoinBtn>
-              <KnowMoreBtn to="/knowMore">
+              <KnowMoreBtn
+                to="infoSection"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact="true"
+                offset={-110}
+              >
                 Know More <AnimatedRightArrow />
               </KnowMoreBtn>
             </BtnLinkWrapper>

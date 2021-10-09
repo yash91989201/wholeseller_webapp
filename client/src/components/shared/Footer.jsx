@@ -7,13 +7,13 @@ import {
   MenuItem,
   FooterLink,
   MetaFooter,
-} from "./footerElements";
+} from "./footer.styles";
 
 const Footer = () => {
   return (
     <Container>
       <Wrapper>
-        <Logo>LOGO</Logo>
+        <Logo to="/">LOGO</Logo>
         <Menu>
           <MenuItem>
             <FooterLink to="/sitemap">Sitemap</FooterLink>

@@ -7,13 +7,13 @@ import {
   TextWrapper,
   Heading,
   Description,
-} from "./infoSectionElements";
+} from "./infoSection.styles";
 
 import imageLink from "assets/images/how_it_works.jpg";
 
 const InfoSection = () => {
   return (
-    <Container>
+    <Container id="infoSection">
       <Heading>How It Works?</Heading>
       <Wrapper>
         <Image src={imageLink} alt="how it works" />

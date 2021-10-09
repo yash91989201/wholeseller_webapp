@@ -14,11 +14,11 @@ import {
   MapMarkerIcon,
   Type,
   Detail,
-} from "./contactSectionElements";
+} from "./contactSection.styles";
 
 const ContactSection = () => {
   return (
-    <Container>
+    <Container id="contactSection">
       <Wrapper>
         <Heading>Contact Us</Heading>
         <Text>We'd love to hear from you</Text>

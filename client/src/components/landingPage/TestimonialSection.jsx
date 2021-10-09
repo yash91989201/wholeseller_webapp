@@ -10,11 +10,11 @@ import {
   QuoteLeft,
   Author,
   UserAvatar,
-} from "./testimonialSectionElements";
+} from "./testimonialSection.styles";
 
 const TestimonialSection = () => {
   return (
-    <Container>
+    <Container id="testimonialSection">
       <Heading>Why People love form</Heading>
       <Wrapper>
         <UserAvatar />

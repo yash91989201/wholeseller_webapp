@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link as LinkRouter } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 import { MdClose } from "react-icons/md";
 
-import { makeUnselectable } from "./utilityStyling";
+import { makeUnselectable } from "./shared.styles";
 
 const SidebarContainer = styled.section`
   ${makeUnselectable}
@@ -64,7 +64,7 @@ const SidebarMenu = styled.ul`
 
 const SidebarMenuItem = styled.li``;
 
-const SidebarLink = styled(LinkScroll)`
+const LinkStyle = css`
   /* Display and Box Model  Properties*/
   padding: 20px;
   margin: 8px 0;
@@ -92,6 +92,14 @@ const SidebarLink = styled(LinkScroll)`
     padding: 14px 0;
     margin: 4px 0;
   }
+`;
+
+const SidebarLinkScroll = styled(LinkScroll)`
+  ${LinkStyle}
+`;
+
+const SidebarLinkRouter = styled(LinkRouter)`
+  ${LinkStyle}
 `;
 
 const SidebarBtnLink = styled(LinkRouter)`
@@ -132,6 +140,7 @@ export {
   CloseMenuBtn,
   SidebarMenu,
   SidebarMenuItem,
-  SidebarLink,
+  SidebarLinkScroll,
+  SidebarLinkRouter,
   SidebarBtnLink,
 };

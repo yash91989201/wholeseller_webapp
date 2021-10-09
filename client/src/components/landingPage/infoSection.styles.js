@@ -4,7 +4,7 @@ import {
   defaultContainer,
   defaultHeading,
   makeUnselectable,
-} from "components/shared/utilityStyling";
+} from "components/shared/shared.styles";
 
 const Container = styled(defaultContainer)`
   ${makeUnselectable}
@@ -17,35 +17,35 @@ const Wrapper = styled.div`
   /* Display and Box Model  Properties*/
   width: 90%;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   justify-content: space-evenly;
   align-items: center;
 
   /* Media Query */
   @media screen and (min-width: 768px) {
     /* Display and Box Model  Properties*/
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
   }
 `;
 
 const Image = styled.img`
   /* Display and Box Model  Properties*/
-  width: min(100%, 468px);
+  width: min(85%, 525px);
   padding-top: 16px;
   padding-bottom: 48px;
 `;
 
 const TextWrapper = styled.div`
   /* Display and Box Model  Properties*/
-  margin: 0 24px;
-  width: min(80%, 400px);
+  margin: 0 16px;
+  max-width: 400px;
 `;
 
 const Heading = styled(defaultHeading)``;
 
 const Description = styled.p`
   /* Display and Box Model  Properties*/
-  padding: 0 min(24px, 4vw);
+  padding: 0 16px;
 
   /* Text  Properties*/
   font-weight: 500;
