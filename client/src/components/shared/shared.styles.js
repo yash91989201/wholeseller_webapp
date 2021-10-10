@@ -12,10 +12,8 @@ const defaultContainer = styled.section`
 const defaultHeading = styled.h1`
   /* Display and Box Model  Properties*/
   padding: 32px 0;
-
   /* Color  Properties*/
   color: #505d68;
-
   /* Text  Properties*/
   font-size: clamp(24px, 32px, 8vh);
   text-align: center;

@@ -26,10 +26,8 @@ const Heading = styled(defaultHeading)`
 const Text = styled.p`
   /* Display and Box Model  Properties*/
   padding: 24px 0;
-
   /* Color  Properties*/
   color: #505d68;
-
   /* Text  Properties*/
   text-align: center;
 `;
@@ -38,10 +36,8 @@ const HLine = styled.div`
   /* Display and Box Model  Properties*/
   width: 85%;
   height: 1px;
-
   /* Color  Properties*/
   background-color: #c2d1d9;
-
   /* Media Query*/
   @media only screen and (min-width: 420px) {
     display: none;
@@ -64,7 +60,6 @@ const ContactWrapper = styled.div`
   flex-flow: column nowrap;
   justify-content: space-evenly;
   align-items: center;
-
   /* Text  Properties*/
   letter-spacing: 1.5px;
   text-align: center;
@@ -78,7 +73,6 @@ const IconWrapper = styled.span`
   display: flex;
   justify-content: center;
   align-content: center;
-
   /* Color  Properties*/
   background-color: #f2f5f7;
 `;
@@ -89,35 +83,25 @@ const IconStyling = css`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   /* Color  Properties*/
   color: #424b5a;
-
   /* Text  Properties*/
   font-size: 24px;
 `;
 
-const EmailIcon = styled(MdEmail)`
-  ${IconStyling}
-`;
-const PhoneIcon = styled(FaPhoneAlt)`
-  ${IconStyling}
-`;
-const MapMarkerIcon = styled(FaMapMarkerAlt)`
-  ${IconStyling}
-`;
+const EmailIcon = styled(MdEmail)(IconStyling);
+const PhoneIcon = styled(FaPhoneAlt)(IconStyling);
+const MapMarkerIcon = styled(FaMapMarkerAlt)(IconStyling);
 
 const Type = styled.p`
   /* Display and Box Model  Properties*/
   padding: 8px 0;
-
   /* Color  Properties*/
   color: #505d68;
 `;
 const Detail = styled.h4`
   /* Display and Box Model  Properties*/
   padding: 8px 0;
-
   /* Color  Properties*/
   color: #a1aeb7;
 `;

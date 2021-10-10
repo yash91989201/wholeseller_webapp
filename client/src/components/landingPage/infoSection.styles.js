@@ -8,7 +8,6 @@ import {
 
 const Container = styled(defaultContainer)`
   ${makeUnselectable}
-
   /* Display and Box Model  Properties*/
     flex-flow:column nowrap;
 `;
@@ -20,7 +19,6 @@ const Wrapper = styled.div`
   flex-flow: column wrap;
   justify-content: space-evenly;
   align-items: center;
-
   /* Media Query */
   @media screen and (min-width: 768px) {
     /* Display and Box Model  Properties*/
@@ -46,7 +44,6 @@ const Heading = styled(defaultHeading)``;
 const Description = styled.p`
   /* Display and Box Model  Properties*/
   padding: 0 16px;
-
   /* Text  Properties*/
   font-weight: 500;
   line-height: 24px;

@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { FaQuoteLeft } from "react-icons/fa";
-
 import { ReactComponent as userAvatarSVG } from "assets/images/user_avatar.svg";
+import { FaQuoteLeft } from "react-icons/fa";
 
 import {
   defaultContainer,
@@ -22,7 +21,6 @@ const Wrapper = styled.div`
   flex-flow: row wrap-reverse;
   justify-content: space-evenly;
   align-items: center;
-
   /* Media Query*/
   @media screen and (min-width: 768px) {
     /* Display and Box Model  Properties*/
@@ -51,7 +49,6 @@ const TextWrapper = styled.div`
   /* Display and Box Model  Properties*/
   margin: 8px 0;
   padding: 8px 0;
-
   /* Text Properties */
   text-align: center;
 `;
@@ -60,7 +57,6 @@ const Text = styled.p`
   /* Display and Box Model  Properties*/
   width: min(85%, 325px);
   margin: 0 auto;
-
   /* Text Properties */
   line-height: 24px;
 `;
@@ -68,7 +64,6 @@ const Text = styled.p`
 const QuoteLeft = styled(FaQuoteLeft)`
   /* Color Properties */
   color: #c2d1d9;
-
   /* Text Properties */
   font-size: 32px;
 `;

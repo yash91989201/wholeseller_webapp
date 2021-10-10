@@ -1,11 +1,10 @@
 import styled, { css } from "styled-components";
 import { Link as LinkScroll } from "react-scroll";
 import { Link as LinkRouter } from "react-router-dom";
-
 import { GoThreeBars } from "react-icons/go";
 import { FaUserCircle } from "react-icons/fa";
 import { IoIosNotificationsOutline } from "react-icons/io";
-import { AiOutlineShoppingCart, AiOutlineCaretDown } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import { makeUnselectable } from "./shared.styles.js";
 
@@ -56,12 +55,10 @@ const NavMenu = styled.ul`
   display: flex;
   /* Other Properties */
   list-style-type: none;
-
   /* Media Query */
   @media screen and (max-width: 1024px) {
     /* Display and Box Model  Properties*/
     display: none;
-
     /* Media Query */
     @media screen and (orientation: landscape) {
       /* Display and Box Model  Properties*/
@@ -73,7 +70,6 @@ const NavMenu = styled.ul`
 const NavItem = styled.li`
   /* Positioning  Properties*/
   position: relative;
-
   /* Display and Box Model  Properties*/
   margin: 0 16px;
 `;
@@ -81,13 +77,10 @@ const NavItem = styled.li`
 const NavLinkStyle = css`
   /* Display and Box Model  Properties*/
   padding: 8px 16px;
-
   /* Text  Properties*/
   font-size: 15px;
-
   /* Other  Properties*/
   cursor: pointer;
-
   /* Pseudo Class Properties */
   &:hover,
   &.active {
@@ -95,7 +88,6 @@ const NavLinkStyle = css`
     background-color: #424b5a;
     color: #fff;
   }
-
   /* Media Query */
   @media screen and (max-width: 1024px) {
     /* Display and Box Model  Properties*/
@@ -103,13 +95,8 @@ const NavLinkStyle = css`
   }
 `;
 
-const NavLinkScroll = styled(LinkScroll)`
-  ${NavLinkStyle}
-`;
-
-const NavLinkRouter = styled(LinkRouter)`
-  ${NavLinkStyle}
-`;
+const NavLinkScroll = styled(LinkScroll)(NavLinkStyle);
+const NavLinkRouter = styled(LinkRouter)(NavLinkStyle);
 
 const BtnLinkWrap = styled.div`
   /* Display and Box Model  Properties*/
@@ -134,7 +121,6 @@ const NavBtnLink = styled(LinkRouter)`
   outline: none;
   /* Text  Properties*/
   font-size: 18px;
-
   /* Pseudo Class Properties */
   &:hover {
     border-bottom: 1px solid #424b5a;
@@ -142,29 +128,8 @@ const NavBtnLink = styled(LinkRouter)`
   }
 `;
 
-const IconStyling = css`
-  /* Text  Properties*/
-  font-size: 24px;
-  /* Other  Properties*/
-  cursor: pointer;
-`;
-
-const UserIcon = styled(FaUserCircle)`
-  ${IconStyling}
-`;
-
-const NotificationIcon = styled(IoIosNotificationsOutline)`
-  ${IconStyling}
-`;
-
-const CartIcon = styled(AiOutlineShoppingCart)`
-  ${IconStyling}
-`;
-
 const NotificationCount = styled.p`
   position: absolute;
-  /* top: -10px;
-  right: -10px; */
   width: 20px;
   height: 20px;
   background: red;
@@ -181,6 +146,17 @@ const NotificationCount = styled.p`
   /* Text Properties */
   font-size: 24px;
 `;
+
+const IconStyling = css`
+  /* Text  Properties*/
+  font-size: 24px;
+  /* Other  Properties*/
+  cursor: pointer;
+`;
+
+const UserIcon = styled(FaUserCircle)(IconStyling);
+const NotificationIcon = styled(IoIosNotificationsOutline)(IconStyling);
+const CartIcon = styled(AiOutlineShoppingCart)(IconStyling);
 
 export {
   NavbarContainer,

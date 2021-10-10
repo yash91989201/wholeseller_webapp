@@ -1,23 +1,13 @@
 import styled, { keyframes } from "styled-components";
-
+import { Link as LinkRouter } from "react-router-dom";
 import { RiArrowDropRightLine } from "react-icons/ri";
 import { RiStarSLine, RiStarHalfSLine, RiStarSFill } from "react-icons/ri";
-import { Link as LinkRouter } from "react-router-dom";
-
-/* Positioning  Properties*/
-/* Display and Box Model  Properties*/
-/* Color  Properties*/
-/* Text  Properties*/
-/* Other Properties */
-/* Animation Properties */
-/* Pseudo Class Properties*/
-/* Media Query*/
 
 const Container = styled.div`
   /* Display and Box Model  Properties*/
-  border: 1px solid #424b5a;
-  border-radius: 8px;
-  margin: 16px 0;
+  border: 1.5px solid #424b5a;
+  border-radius: 4px;
+  margin: 8px 0;
   width: min(100%, 675px);
   display: flex;
   flex-flow: row nowrap;
@@ -66,7 +56,7 @@ const ProductImage = styled.img`
 const ProductDescriptionWrapper = styled.div`
   /* Display and Box Model  Properties*/
   width: min(90%, 350px);
-  align-self: flex-start;
+  align-self: center;
   /* Media Query*/
   @media screen and (max-width: 420px) {
     /* Display and Box Model  Properties*/

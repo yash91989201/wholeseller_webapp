@@ -1,18 +1,8 @@
 import styled from "styled-components";
 import { Link as LinkRouter } from "react-router-dom";
-
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
 
 import { defaultContainer } from "components/shared/shared.styles";
-
-/* Positioning  Properties*/
-/* Display and Box Model  Properties*/
-/* Color  Properties*/
-/* Text  Properties*/
-/* Other Properties */
-/* Animation Properties */
-/* Pseudo Class Properties*/
-/* Media Query*/
 
 const Container = styled(defaultContainer)`
   /* Display and Box Model  Properties*/

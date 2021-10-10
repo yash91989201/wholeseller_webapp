@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FiSearch } from "react-icons/fi";
+
 import { defaultContainer } from "components/shared/shared.styles";
 
 const Container = styled(defaultContainer)``;

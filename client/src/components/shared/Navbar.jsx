@@ -36,7 +36,7 @@ const Navbar = ({ toggleMenuState, isLoggedIn, isAdmin }) => {
                 duration={500}
                 spy={true}
                 exact="true"
-                offset={-110}
+                offset={-120}
               >
                 HOW IT WORKS
               </NavLinkScroll>
