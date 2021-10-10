@@ -43,31 +43,27 @@ const ProductCard = ({
           <OutlineStar />
           <OutlineStar />
         </ProductRating>
-        {isLoggedIn && (
-          <>
-            <ProductPrice>
-              <Price>
-                ₹{productPrice}
-                {onOffer && (
-                  <Discount>₹{productPrice + discountAmount}</Discount>
-                )}
-              </Price>
-              {onOffer && (
-                <OfferTag>
-                  {Math.floor(
-                    (discountAmount / (discountAmount + productPrice)) * 100
-                  )}
-                  % Off
-                </OfferTag>
+        <ProductPrice>
+          <Price>
+            ₹{productPrice}
+            {onOffer && <Discount>₹{productPrice + discountAmount}</Discount>}
+          </Price>
+          {onOffer && (
+            <OfferTag>
+              {Math.floor(
+                (discountAmount / (discountAmount + productPrice)) * 100
               )}
-            </ProductPrice>
-            <BtnLinkWrapper>
-              <AddToCart>Add To Cart</AddToCart>
-              <MoreDetails>
-                More Details <RightArrow />
-              </MoreDetails>
-            </BtnLinkWrapper>
-          </>
+              % Off
+            </OfferTag>
+          )}
+        </ProductPrice>
+        {isLoggedIn && (
+          <BtnLinkWrapper>
+            <AddToCart>Add To Cart</AddToCart>
+            <MoreDetails>
+              More Details <RightArrow />
+            </MoreDetails>
+          </BtnLinkWrapper>
         )}
       </ProductDescriptionWrapper>
     </Container>

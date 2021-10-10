@@ -68,7 +68,7 @@ const productData = [
 ];
 const prevPageAvailable = false;
 const nextPageAvailable = true;
-const isLoggedIn = false;
+const isLoggedIn = true;
 
 const ProductSection = () => {
   return (
