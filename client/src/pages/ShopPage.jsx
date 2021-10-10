@@ -10,13 +10,13 @@ import {
   SearchandSort,
   ProductSection,
 } from "components/shopPage";
-
+import { SliderData } from "components/shopPage/sliderData";
 const ShopPage = () => {
   const [menuState, setMenuState] = useState(false);
   const toggleMenuState = () => {
     setMenuState(!menuState);
   };
-  const isLoggedIn = false;
+  const isLoggedIn = true;
   const isAdmin = false;
   return (
     <>
@@ -39,9 +39,9 @@ const ShopPage = () => {
       ) : (
         <>
           <GoBack />
-          <BannerSection />
         </>
       )}
+      <BannerSection slides={SliderData} />
       <SearchandSort />
       <ProductSection />
       <Footer />

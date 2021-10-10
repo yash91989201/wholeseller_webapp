@@ -1,5 +1,6 @@
 import styled, { css, keyframes } from "styled-components";
 import { Link as LinkRouter } from "react-router-dom";
+import { IoArrowRedoCircleOutline } from "react-icons/io5";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 import {
@@ -27,7 +28,15 @@ const ImageSlide = styled.div`
   /* Media Query*/
   @media screen and (max-width: 768px) {
     /* Display and Box Model  Properties*/
-    height: calc(60vh / 0.5vw);
+    height: 50vh;
+  }
+  @media screen and (max-width: 480px) {
+    /* Display and Box Model  Properties*/
+    height: 40vh;
+  }
+  @media screen and (max-width: 380px) {
+    /* Display and Box Model  Properties*/
+    height: 30vh;
   }
 `;
 
@@ -75,6 +84,10 @@ const SlideControl = styled.div`
     /* Positioning  Properties*/
     top: 105%;
   }
+  @media screen and (max-width: 480px) {
+    /* Positioning  Properties*/
+    top: 115%;
+  }
 `;
 
 const SlideIndicator = styled.div``;
@@ -91,6 +104,30 @@ const Dot = styled.span`
     $active ? "rgba(255,255,255,1)" : "rgba(255,255,255,0.25)"};
   /* Other Properties */
   cursor: pointer;
+`;
+
+const ViewProduct = styled(LinkRouter)`
+  /* Positioning  Properties*/
+  position: absolute;
+  top: 90%;
+  right: 14%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  /* Display and Box Model  Properties*/
+  border-radius: 50%;
+  width: 35px;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Color Properties */
+  background-color: #000;
+  color: #fff;
+  /* Media Query*/
+  @media screen and (min-width: 768px) {
+    /* Display and Box Model  Properties*/
+    display: none;
+  }
 `;
 
 const TextWrapper = styled.div`
@@ -151,6 +188,7 @@ const ArrowStyling = css`
 
 const LeftArrow = styled(MdKeyboardArrowLeft)(ArrowStyling);
 const RightArrow = styled(MdKeyboardArrowRight)(ArrowStyling);
+const RightRedoArrow = styled(IoArrowRedoCircleOutline)(ArrowStyling);
 
 export {
   Container,
@@ -160,6 +198,7 @@ export {
   SlideControl,
   SlideIndicator,
   Dot,
+  ViewProduct,
   TextWrapper,
   Heading,
   Text,
@@ -167,4 +206,5 @@ export {
   BtnLinkRouter,
   LeftArrow,
   RightArrow,
+  RightRedoArrow,
 };
