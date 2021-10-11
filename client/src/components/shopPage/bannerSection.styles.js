@@ -21,10 +21,16 @@ const Wrapper = styled.div`
 
 const ImageSlide = styled.div`
   /* Display and Box Model  Properties*/
-  width: 75%;
+  width: 80%;
   height: 75vh;
   /* Other Properties */
   overflow: hidden;
+  /* Media Query*/
+  @media screen and (max-width: 1024px) {
+    /* Display and Box Model  Properties*/
+    width: calc(95% - 4vw);
+    height: 60vw;
+  }
 `;
 
 const SlideAnimation = keyframes`
@@ -58,7 +64,7 @@ const SlideControl = styled.div`
   /* Display and Box Model  Properties*/
   border-radius: 25px;
   padding: 0 8px;
-  max-width: 250px;
+  width: min(275px, 75%);
   height: 30px;
   display: flex;
   justify-content: space-between;
@@ -67,16 +73,13 @@ const SlideControl = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
   /* Media Query*/
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 768px) {
     /* Positioning  Properties*/
-    top: 112.5%;
+    top: calc(104% + 4vw);
   }
 `;
 
-const SlideIndicator = styled.div`
-  /* Display and Box Model  Properties*/
-  padding: 0 4px;
-`;
+const SlideIndicator = styled.div``;
 
 const Dot = styled.span`
   /* Display and Box Model  Properties*/
@@ -90,13 +93,17 @@ const Dot = styled.span`
     $active ? "rgba(255,255,255,1)" : "rgba(255,255,255,0.25)"};
   /* Other Properties */
   cursor: pointer;
+  @media screen and (max-width: 420px) {
+    /* Display and Box Model  Properties*/
+    margin: 0 4px;
+  }
 `;
 
 const ViewProduct = styled(LinkRouter)`
   /* Positioning  Properties*/
   position: absolute;
-  top: 90%;
-  right: 14%;
+  bottom: 2%;
+  right: 10%;
   transform: translate(-50%, -50%);
   z-index: 9;
   /* Display and Box Model  Properties*/
