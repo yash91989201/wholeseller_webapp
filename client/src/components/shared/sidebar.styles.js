@@ -7,29 +7,24 @@ import { makeUnselectable } from "./shared.styles";
 
 const SidebarContainer = styled.section`
   ${makeUnselectable}
-
   /* Positioning  Properties*/
   position: fixed;
   z-index: 999;
   bottom: 0;
   left: 0;
   bottom: ${({ sidebarOpen }) => (sidebarOpen ? "0" : "100%")};
-
   /* Display and Box Model  Properties*/
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-
   /* Color  Properties*/
   background: #333;
   color: #fff;
-
   /* Other  Properties*/
   transition: 250ms ease-in-out;
   opacity: ${({ sidebarOpen }) => (sidebarOpen ? "100%" : "0%")};
-
   /* Media Query */
   @media screen and (min-width: 1024px) {
     /* Display and Box Model  Properties*/
@@ -40,11 +35,9 @@ const SidebarContainer = styled.section`
 const CloseBtnWrapper = styled.div`
   /* Display and Box Model  Properties*/
   width: 100%;
-  padding-right: max(48px, 8vw);
-
+  padding-right: max(40px, 8vw);
   /* Text  Properties*/
   text-align: right;
-
   /* Media Query */
   @media screen and (max-width: 768px) and (orientation: landscape) {
     /* Display and Box Model  Properties*/
@@ -69,14 +62,11 @@ const LinkStyle = css`
   padding: 20px;
   margin: 8px 0;
   display: block;
-
   /* Text  Properties*/
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
-
   /* Other  Properties*/
   cursor: pointer;
-
   /* Pseudo Class Properties */
   &:hover {
     /* Text  Properties*/
@@ -85,7 +75,6 @@ const LinkStyle = css`
     background-color: #e5e5e5;
     color: #333;
   }
-
   /* Media Query */
   @media screen and (max-width: 768px) and (orientation: landscape) {
     /* Display and Box Model  Properties*/
@@ -94,13 +83,9 @@ const LinkStyle = css`
   }
 `;
 
-const SidebarLinkScroll = styled(LinkScroll)`
-  ${LinkStyle}
-`;
+const SidebarLinkScroll = styled(LinkScroll)(LinkStyle);
 
-const SidebarLinkRouter = styled(LinkRouter)`
-  ${LinkStyle}
-`;
+const SidebarLinkRouter = styled(LinkRouter)(LinkStyle);
 
 const SidebarBtnLink = styled(LinkRouter)`
   /* Display and Box Model  Properties*/
@@ -108,25 +93,20 @@ const SidebarBtnLink = styled(LinkRouter)`
   border-radius: 5px;
   padding: 8px 40px;
   align-self: center;
-
   /* Color  Properties*/
   color: #fff;
-
   /* Text  Properties*/
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 1.5px;
-
   /* Pseudo Class  Properties*/
   &:hover {
     /* Color Properties */
     background-color: #f4f4f4;
     color: #333;
-
     /* Text Properties */
     font-size: 20px;
   }
-
   /* Media Query */
   @media screen and (max-width: 768px) and (orientation: landscape) {
     /* Display and Box Model  Properties*/
