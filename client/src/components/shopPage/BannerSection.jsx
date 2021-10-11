@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Container,
   Wrapper,
@@ -33,6 +33,21 @@ const BannerSection = ({ slides }) => {
       setCurrent(slideIndex);
     }
   };
+
+  const autoPlayRef = useRef();
+
+  useEffect(() => {
+    autoPlayRef.current = () => toggleSlide("nextSlide");
+  });
+
+  useEffect(() => {
+    const play = () => {
+      autoPlayRef.current();
+    };
+
+    const interval = setInterval(play, 3250);
+    return () => clearInterval(interval);
+  }, []);
 
   if (!Array.isArray(slides) || slides.length <= 0) {
     return null;

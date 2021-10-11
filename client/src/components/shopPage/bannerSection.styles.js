@@ -11,7 +11,7 @@ import {
 const Container = styled(defaultContainer)``;
 
 const Wrapper = styled.div`
-  /* Positioncing  Properties*/
+  /* Positioning  Properties*/
   position: relative;
   /* Display and Box Model  Properties*/
   width: 100%;
@@ -25,28 +25,15 @@ const ImageSlide = styled.div`
   height: 75vh;
   /* Other Properties */
   overflow: hidden;
-  /* Media Query*/
-  @media screen and (max-width: 768px) {
-    /* Display and Box Model  Properties*/
-    height: 50vh;
-  }
-  @media screen and (max-width: 480px) {
-    /* Display and Box Model  Properties*/
-    height: 40vh;
-  }
-  @media screen and (max-width: 380px) {
-    /* Display and Box Model  Properties*/
-    height: 30vh;
-  }
 `;
 
 const SlideAnimation = keyframes`
 from{
-  /* Positioncing  Properties*/
-  transform:translateX(200%);
+  /* Positioning  Properties*/
+  transform:translateX(180%);
 }
 to{
-  /* Positioncing  Properties*/
+  /* Positioning  Properties*/
   transform:translateX(0);
 
 }
@@ -59,7 +46,7 @@ const Image = styled.img`
   /* Other Properties */
   object-fit: cover;
   /* Animation Properties */
-  animation: ${SlideAnimation} 250ms ease-in-out;
+  animation: ${SlideAnimation} 400ms ease-in-out;
 `;
 
 const SlideControl = styled.div`
@@ -71,7 +58,7 @@ const SlideControl = styled.div`
   /* Display and Box Model  Properties*/
   border-radius: 25px;
   padding: 0 8px;
-  width: 175px;
+  max-width: 250px;
   height: 30px;
   display: flex;
   justify-content: space-between;
@@ -80,23 +67,22 @@ const SlideControl = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
   /* Media Query*/
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     /* Positioning  Properties*/
-    top: 105%;
-  }
-  @media screen and (max-width: 480px) {
-    /* Positioning  Properties*/
-    top: 115%;
+    top: 112.5%;
   }
 `;
 
-const SlideIndicator = styled.div``;
+const SlideIndicator = styled.div`
+  /* Display and Box Model  Properties*/
+  padding: 0 4px;
+`;
 
 const Dot = styled.span`
   /* Display and Box Model  Properties*/
   border-radius: 50%;
-  margin: 0 4px;
-  width: 8px;
+  margin: 0 6px;
+  width: ${({ $active }) => ($active ? "8px" : "7px")};
   aspect-ratio: 1;
   display: inline-block;
   /* Color  Properties*/
@@ -112,7 +98,7 @@ const ViewProduct = styled(LinkRouter)`
   top: 90%;
   right: 14%;
   transform: translate(-50%, -50%);
-  z-index: 99;
+  z-index: 9;
   /* Display and Box Model  Properties*/
   border-radius: 50%;
   width: 35px;
