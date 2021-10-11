@@ -7,7 +7,7 @@ const Container = styled.div`
   /* Display and Box Model  Properties*/
   border: 1.5px solid #424b5a;
   border-radius: 4px;
-  margin: 8px 0;
+  margin: 16px 0;
   width: min(100%, 675px);
   display: flex;
   flex-flow: row nowrap;
