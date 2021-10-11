@@ -10,11 +10,11 @@ import {
   QuoteLeft,
   Author,
   UserAvatar,
-} from "./testimonialSectionElements";
+} from "./testimonialSection.styles";
 
 const TestimonialSection = () => {
   return (
-    <Container>
+    <Container id="testimonialSection">
       <Heading>Why People love form</Heading>
       <Wrapper>
         <UserAvatar />
@@ -35,16 +35,3 @@ const TestimonialSection = () => {
 };
 
 export default TestimonialSection;
-
-//<TestimonialCard>
-//        <TextWrapper>
-//        <Text>
-//          <QuoteLeft />
-//          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-//          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-//          enim ad minim veniam, quis nostrud exercitation ullamco laboris
-//          nisi ut aliquip ex ea commodo consequat.
-//        </Text>
-//      </TextWrapper>
-//      <UserAvatar />
-//    </TestimonialCard>

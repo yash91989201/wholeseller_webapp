@@ -14,7 +14,7 @@ import {
   BtnLinkWrapper,
   ProductLink,
   RightArrow,
-} from "./productShowcaseElements";
+} from "./productShowcase.styles";
 import productImageLink from "assets/images/pda.png";
 
 const products = [
@@ -38,7 +38,7 @@ const products = [
 
 const ProductShowcase = () => {
   return (
-    <Container>
+    <Container id="productShowcase">
       <Heading>Our Products</Heading>
       <Wrapper>
         <Products>

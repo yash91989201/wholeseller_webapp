@@ -6,11 +6,10 @@ import {
   defaultContainer,
   defaultHeading,
   makeUnselectable,
-} from "components/shared/utilityStyling";
+} from "components/shared/shared.styles";
 
 const Container = styled(defaultContainer)`
   ${makeUnselectable}
-
   /* Display and Box Model  Properties*/
   padding:0;
 `;
@@ -18,12 +17,11 @@ const Container = styled(defaultContainer)`
 const Wrapper = styled.div`
   /* Display and Box Model  Properties*/
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
   align-items: center;
-
   /* Media Query */
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     /* Display and Box Model  Properties*/
     padding: 24px 0;
     flex-flow: row nowrap;
@@ -32,17 +30,17 @@ const Wrapper = styled.div`
 
 const Image = styled.img`
   /* Display and Box Model  Properties*/
+  padding: 4vw;
   width: min(100%, 480px);
-
   /* Media Query */
-  @media screen and (min-width: 420px) {
+  @media screen and (min-width: 420px) and (max-width: 768px) {
     /* Display and Box Model  Properties*/
-    padding: 2.25vw;
+    padding: 2vw;
   }
-
   /* Media Query */
   @media screen and (min-width: 768px) {
     /* Display and Box Model  Properties*/
+    padding: 2vw;
     width: min(80%, 700px);
   }
 `;
@@ -64,7 +62,6 @@ const Description = styled.p`
   /* Display and Box Model  Properties*/
   width: min(85%, 480px);
   margin: 16px 0;
-
   /* Text  Properties*/
   text-align: center;
   line-height: 24px;
@@ -93,19 +90,17 @@ const JoinBtn = styled(LinkRouter)`
 const KnowMoreBtn = styled(LinkScroll)`
   /* Display and Box Model  Properties*/
   margin-top: 16px;
-
   /* Text  Properties*/
   text-align: center;
   text-decoration: underline;
   font-size: 12px;
   font-weight: 300;
   letter-spacing: 1.25px;
-
   /* Other  Properties*/
   cursor: pointer;
 `;
 
-export { AnimatedRightArrow } from "../shared/utilityStyling";
+export { AnimatedRightArrow } from "../shared/shared.styles";
 
 export {
   Container,
