@@ -39,18 +39,23 @@ const Sidebar = ({ sidebarState, toggleMenuState, isLoggedIn, isAdmin }) => {
           <>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarLinkRouter to="/shop">Your Cart</SidebarLinkRouter>
+                <SidebarLinkRouter to="/cart">Your Cart</SidebarLinkRouter>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarLinkScroll to="/shop">Your Account</SidebarLinkScroll>
+                <SidebarLinkRouter to="/shop">Notifications</SidebarLinkRouter>
+              </SidebarMenuItem>
+              <SidebarMenuItem></SidebarMenuItem>
+              <SidebarLinkRouter to="/orders">Your Orders</SidebarLinkRouter>
+              <SidebarMenuItem>
+                <SidebarLinkRouter to="/accountSettings">
+                  Account Settings
+                </SidebarLinkRouter>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarLinkScroll to="/shop">Notifications</SidebarLinkScroll>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarLinkScroll to="/shop">Contact Us</SidebarLinkScroll>
+                <SidebarLinkRouter to="/shop">Contact Us</SidebarLinkRouter>
               </SidebarMenuItem>
             </SidebarMenu>
+            <SidebarBtnLink to="/login">Log Out</SidebarBtnLink>
           </>
         )
       ) : (
@@ -89,9 +94,9 @@ const Sidebar = ({ sidebarState, toggleMenuState, isLoggedIn, isAdmin }) => {
               </SidebarLinkScroll>
             </SidebarMenuItem>
           </SidebarMenu>
+          <SidebarBtnLink to="/login">Log In</SidebarBtnLink>
         </>
       )}
-      <SidebarBtnLink to="/login">Log In</SidebarBtnLink>
     </SidebarContainer>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   NavbarContainer,
   NavbarWrapper,
@@ -10,13 +10,25 @@ import {
   BtnLinkWrap,
   NavBtnLink,
   MenuBtn,
-  UserIcon,
-  NotificationIcon,
-  CartIcon,
+  UserAccountDropdown,
+  UserDetails,
+  UserImage,
+  UserName,
+  UserEmail,
+  DropDownLink,
   NotificationCount,
+  CartIcon,
+  NotificationIcon,
+  UserIcon,
+  YourOrdersIcon,
+  AccountSettingIcon,
+  ContactIcon,
+  LogOutIcon,
 } from "./navbar.styles";
 
 const Navbar = ({ toggleMenuState, isLoggedIn, isAdmin }) => {
+  const [userDropdown, setUserDropdown] = useState(false);
+
   return (
     <NavbarContainer>
       <NavbarWrapper>
@@ -62,19 +74,38 @@ const Navbar = ({ toggleMenuState, isLoggedIn, isAdmin }) => {
           {isLoggedIn ? (
             <>
               <NavItem>
-                <NavBtnLink>
+                <NavBtnLink to="/yourCart">
                   <CartIcon />
                   <NotificationCount>2</NotificationCount>
                 </NavBtnLink>
               </NavItem>
               <NavItem>
-                <NavBtnLink>
+                <NavBtnLink to="/notification">
                   <NotificationIcon />
                   <NotificationCount>2</NotificationCount>
                 </NavBtnLink>
               </NavItem>
               <NavItem>
-                <UserIcon />
+                <UserIcon onClick={() => setUserDropdown(!userDropdown)} />
+                <UserAccountDropdown $userDropdown={userDropdown}>
+                  <UserDetails>
+                    <UserImage src="https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHVzZXIlMjBpbWFnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" />
+                    <UserName>Yashraj Jaiswal</UserName>
+                    <UserEmail>yash@gmail.com</UserEmail>
+                  </UserDetails>
+                  <DropDownLink to="/yourOrders">
+                    <YourOrdersIcon /> Your Orders
+                  </DropDownLink>
+                  <DropDownLink to="/userAccount">
+                    <AccountSettingIcon /> Account Settings
+                  </DropDownLink>
+                  <DropDownLink to="/contactUs">
+                    <ContactIcon /> Contact Us
+                  </DropDownLink>
+                  <DropDownLink to="/logout">
+                    <LogOutIcon /> Log Out
+                  </DropDownLink>
+                </UserAccountDropdown>
               </NavItem>
             </>
           ) : (
