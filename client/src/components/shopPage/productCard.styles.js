@@ -3,7 +3,7 @@ import { Link as LinkRouter } from "react-router-dom";
 import { RiArrowDropRightLine } from "react-icons/ri";
 import { RiStarSLine, RiStarHalfSLine, RiStarSFill } from "react-icons/ri";
 
-import { BtnLink, OfferTag } from "components/shared/shared.styles";
+import { OfferTag } from "components/shared/shared.styles";
 
 const Container = styled.div`
   /* Display and Box Model  Properties*/
@@ -103,6 +103,7 @@ const Discount = styled.sup`
 const BtnLinkWrapper = styled.div`
   /* Display and Box Model  Properties*/
   display: flex;
+  align-items: center;
   /* Media Query*/
   @media screen and (max-width: 420px) {
     /* Display and Box Model  Properties*/
@@ -112,59 +113,47 @@ const BtnLinkWrapper = styled.div`
   /* Media Query*/
   @media screen and (min-width: 420px) {
     /* Display and Box Model  Properties*/
-    padding: min(8px, 8%) 0;
+    padding: 8px 0px;
   }
 `;
 
-const AddToCart = styled(BtnLink.Solid).attrs((props) => {
-  props.$rounded = 4;
-  props.$margin = [0, 0];
-  props.$padding = [8, 32];
-})`
+const AddToCart = styled.button`
+  /* Display and Box Model  Properties*/
+  border: 0;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  padding: 12px 0;
+  /* Color  Properties*/
+  background-color: #424b5a;
+  /* Text  Properties*/
+  color: #fff;
+  /* Other Properties */
+  outline: 0;
+  cursor: pointer;
   /*  Media Query */
   @media screen and (min-width: 420px) {
     /* Display and Box Model  Properties*/
     margin: 0;
-    padding: 6px 16px;
+    padding: 8px 16px;
   }
 `;
 
-const MoreDetails = styled(BtnLink.Ghost).attrs((props) => {
-  props.$rounded = 4;
-  props.$margin = [0, 0];
-  props.$padding = [8, 32];
-})`
+const MoreDetails = styled(LinkRouter)`
+  /* Display and Box Model  Properties*/
+  border: 1px solid #424b5a;
+  border-radius: 2.5px;
+  margin-bottom: 4px;
+  padding: 4px 8px;
+  /* Color  Properties*/
+  background-color: transparent;
+  /* Text  Properties*/
+  color: #424b5a;
   /* Other Properties */
-  overflow: hidden;
-  /* Pseudo Properties */
-  &:hover {
-    /* Color Properties */
-    color: var(--col-neutral-white);
-    /* Text Properties */
-    font-weight: bolder;
-  }
-  &:after {
-    /* Positioning Properties */
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 200ms ease-in-out;
-    z-index: -9;
-    /* Display and Box Model  Properties*/
-    content: "";
-    width: 0;
-    height: 100%;
-    background: var(--col-accent);
-  }
-  &:hover:after {
-    /* Display and Box Model  Properties*/
-    width: 100%;
-  }
+  outline: 0;
   /*  Media Query */
   @media screen and (min-width: 420px) {
     margin: 0;
     margin-left: 16px;
-    padding: 6px 16px;
   }
 `;
 

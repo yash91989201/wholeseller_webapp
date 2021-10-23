@@ -166,13 +166,13 @@ const BtnLinkWrapper = styled.div`
   place-items: center;
 `;
 
-const BtnLinkRouter = styled(BtnLink.Solid).attrs((props) => {
-  props.$rounded = 4;
-  props.$margin = [0, 0];
-  props.$padding = [8, 16];
-})`
+const BtnLinkRouter = styled(LinkRouter)`
   /* Display and Box Model  Properties*/
-  /* width: 50%; */
+  border-radius: 5px;
+  padding: 8px 24px;
+  /* Color  Properties*/
+  background-color: #424b5a;
+  color: #fff;
 `;
 
 const ArrowStyling = css`

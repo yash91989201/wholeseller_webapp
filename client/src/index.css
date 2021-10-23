@@ -6,7 +6,7 @@
   --col-secondary: hsl(165, 80%, 43%);
   /* Accent Color */
   --col-accent: hsl(0, 84%, 64%);
-  --col-accent-light: hsl(0, 100%, 93%);
+  --col-accent-light: hsl(10, 50%, 80%);
   /* Neutral Colors */
   --col-neutral-white: hsl(60, 40%, 95%);
   --col-neutral-black: hsl(0, 0%, 9%);

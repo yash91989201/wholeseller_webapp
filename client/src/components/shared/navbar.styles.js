@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { Link as LinkScroll } from "react-scroll";
 import { Link as LinkRouter } from "react-router-dom";
 import { GoThreeBars } from "react-icons/go";
 import { FaUserCircle } from "react-icons/fa";
@@ -9,7 +8,7 @@ import { RiListSettingsLine, RiContactsLine } from "react-icons/ri";
 import { FiLogOut } from "react-icons/fi";
 import { BsBoxSeam } from "react-icons/bs";
 
-import { makeUnselectable, BtnLink, BtnScroll } from "./shared.styles.js";
+import { makeUnselectable } from "./shared.styles.js";
 
 const NavbarContainer = styled.section`
   ${makeUnselectable}
@@ -76,21 +75,61 @@ const NavItem = styled.li`
   margin: 0 16px;
 `;
 
-const NavLinkScroll = styled(BtnScroll.Solid).attrs((props) => {
-  props.$rounded = 24;
-  props.$margin = [0, 0];
-  props.$padding = [6, 16];
-})`
-  /* Text Properties */
+const NavLinkScroll = styled(LinkRouter)`
+  /* Positioning  Properties*/
+  position: relative;
+  /* Display and Box Model  Properties*/
+  border-radius: 24px;
+  margin: 0px;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Color  Properties*/
+  background-color: var(--col-accent);
+  color: #fff;
+  /* Font Properties */
   font-size: 14px;
   font-weight: bold;
+  /* Animation Properties */
+  transition: all 200ms ease-in;
+  /* Pseudo Class Properties*/
+  &:hover {
+    transform: scale(1.0625) translateY(-2px);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 20px -5px;
+  }
+  &:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    transform: scale(0.96);
+  }
 `;
 
-const NavLinkRouter = styled(BtnLink.Solid).attrs((props) => {
-  props.$rounded = 24;
-  props.$margin = [0, 0];
-  props.$padding = [6, 16];
-})`
+const NavLinkRouter = styled(LinkRouter)`
+  /* Positioning  Properties*/
+  position: relative;
+  /* Display and Box Model  Properties*/
+  border-radius: 24px;
+  margin: 0px;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Color  Properties*/
+  background-color: var(--col-accent);
+  color: #fff;
+  /* Animation Properties */
+  transition: all 200ms ease-in;
+  /* Pseudo Class Properties*/
+  &:hover {
+    transform: scale(1.0625) translateY(-2px);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 20px -5px;
+  }
+  &:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    transform: scale(0.96);
+  }
   /* Text Properties */
   font-size: 14px;
   font-weight: bold;
@@ -106,11 +145,19 @@ const BtnLinkWrap = styled.div`
   }
 `;
 
-const LogInBtn = styled(BtnLink.Ghost).attrs((props) => {
-  props.$rounded = 24;
-  props.$margin = [0, 0];
-  props.$padding = [8, 32];
-})`
+const LogInBtn = styled(LinkRouter)`
+  /* Positioning  Properties*/
+  position: relative;
+  /* Display and Box Model  Properties*/
+  border: 1.125px solid var(--col-accent);
+  border-radius: 8px;
+  margin: 0px;
+  padding: 6px 24px;
+  /* Color  Properties*/
+  color: var(--col-neutral-black);
+  /* Animation Properties */
+  transition: all 200ms ease-in;
+  /* Pseudo Class Properties*/
   /* Other Properties */
   overflow: hidden;
   /* Pseudo Properties */
@@ -139,17 +186,29 @@ const LogInBtn = styled(BtnLink.Ghost).attrs((props) => {
   }
 `;
 
-const UserActionBtn = styled(BtnLink.Icon).attrs((props) => {
-  props.$margin = [0, 0];
-})`
+const UserActionBtn = styled(LinkRouter)`
+  /* Positioning  Properties*/
+  position: relative;
   transform: ${({ $active }) => ($active ? `scale(1.125)` : "")};
+  /* Display and Box Model  Properties*/
   box-shadow: ${({ $active }) =>
     $active
       ? `0 15px 25px -4px rgba(0, 0, 0, 0.2),
     inset 0 -8px 30px 1px rgba(255, 255, 255, 0.5),
     0 -10px 15px -1px rgba(255, 255, 255, 0.5)`
       : ""};
-  /* Pseudo Properties */
+  border-radius: 50%;
+  margin: 8px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Color  Properties*/
+  background-color: var(--col-secondary);
+  color: var(--col-neutral-white);
+  /* Animation Properties */
+  transition: all 200ms ease-in;
+  /* Pseudo Class Properties*/
   &:hover {
     transform: scale(1.125);
     box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.2),
@@ -245,13 +304,13 @@ const UserEmail = styled.p`
   font-weight: 600;
 `;
 
-const DropDownLink = styled(BtnLink.Text).attrs((props) => {
-  props.$margin = [0, 0];
-  props.$padding = [10, 10];
-})`
+const DropDownLink = styled(LinkRouter)`
   /* Display and Box Model  Properties*/
-  padding: 18px 0;
+  border-radius: 4px;
+  margin: 8px 0;
+  padding: 12px 0;
   display: flex;
+  align-items: center;
   /* Pseudo Class Properties*/
   &:after {
     position: absolute;
