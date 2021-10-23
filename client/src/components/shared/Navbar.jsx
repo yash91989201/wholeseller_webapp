@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   NavbarContainer,
   NavbarWrapper,
@@ -8,7 +8,8 @@ import {
   NavLinkScroll,
   NavLinkRouter,
   BtnLinkWrap,
-  NavBtnLink,
+  UserActionBtn,
+  LogInBtn,
   MenuBtn,
   UserAccountDropdown,
   UserDetails,
@@ -26,9 +27,12 @@ import {
   LogOutIcon,
 } from "./navbar.styles";
 
-const Navbar = ({ toggleMenuState, isLoggedIn, isAdmin }) => {
-  const [userDropdown, setUserDropdown] = useState(false);
+import useOnClickOutside from "customHooks/useOnClickOutside";
 
+const Navbar = ({ toggleMenuState, isLoggedIn, isAdmin }) => {
+  const ref = useRef();
+  const [userDropdown, setUserDropdown] = useState(false);
+  useOnClickOutside(ref, () => setUserDropdown(false));
   return (
     <NavbarContainer>
       <NavbarWrapper>
@@ -74,19 +78,24 @@ const Navbar = ({ toggleMenuState, isLoggedIn, isAdmin }) => {
           {isLoggedIn ? (
             <>
               <NavItem>
-                <NavBtnLink to="/yourCart">
+                <UserActionBtn to="/yourCart">
                   <CartIcon />
                   <NotificationCount>2</NotificationCount>
-                </NavBtnLink>
+                </UserActionBtn>
               </NavItem>
               <NavItem>
-                <NavBtnLink to="/notification">
+                <UserActionBtn to="/notification">
                   <NotificationIcon />
                   <NotificationCount>2</NotificationCount>
-                </NavBtnLink>
+                </UserActionBtn>
               </NavItem>
-              <NavItem>
-                <UserIcon onClick={() => setUserDropdown(!userDropdown)} />
+              <NavItem ref={ref}>
+                <UserActionBtn
+                  onClick={() => setUserDropdown(!userDropdown)}
+                  $active={userDropdown}
+                >
+                  <UserIcon />
+                </UserActionBtn>
                 <UserAccountDropdown $userDropdown={userDropdown}>
                   <UserDetails>
                     <UserImage src="https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHVzZXIlMjBpbWFnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" />
@@ -110,7 +119,7 @@ const Navbar = ({ toggleMenuState, isLoggedIn, isAdmin }) => {
             </>
           ) : (
             <BtnLinkWrap>
-              <NavBtnLink to="/logIn">Log In</NavBtnLink>
+              <LogInBtn to="/logIn">Log In</LogInBtn>
             </BtnLinkWrap>
           )}
         </NavMenu>

@@ -6,6 +6,7 @@ import {
   defaultContainer,
   defaultHeading,
   makeUnselectable,
+  BtnLink,
 } from "components/shared/shared.styles";
 
 const Container = styled(defaultContainer)`
@@ -74,19 +75,11 @@ const BtnLinkWrapper = styled.div`
   align-items: center;
 `;
 
-const JoinBtn = styled(LinkRouter)`
-  /* Display and Box Model  Properties*/
-  padding: 12px 16px;
-  border-radius: 5px;
-  /* Color  Properties*/
-  color: #fff;
-  background-color: #424b5a;
-  /* Text  Properties*/
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1.25px;
-  text-align: center;
-`;
+const JoinBtn = styled(BtnLink.Solid).attrs((props) => {
+  props.$rounded = 24;
+  props.$margin = [0, 0];
+  props.$padding = [8, 24];
+})``;
 const KnowMoreBtn = styled(LinkScroll)`
   /* Display and Box Model  Properties*/
   margin-top: 16px;

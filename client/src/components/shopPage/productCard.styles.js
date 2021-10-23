@@ -1,11 +1,13 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Link as LinkRouter } from "react-router-dom";
 import { RiArrowDropRightLine } from "react-icons/ri";
 import { RiStarSLine, RiStarHalfSLine, RiStarSFill } from "react-icons/ri";
 
+import { BtnLink, OfferTag } from "components/shared/shared.styles";
+
 const Container = styled.div`
   /* Display and Box Model  Properties*/
-  border: 1.5px solid #424b5a;
+  border: 1.5px solid var(--col-neutral-black);
   border-radius: 4px;
   margin: 16px 0;
   width: min(100%, 675px);
@@ -98,53 +100,6 @@ const Discount = styled.sup`
   text-decoration: line-through;
 `;
 
-const ShimmerAnimation = keyframes`
-
-  from{
-    /* Positioning  Properties*/
-    left:0;
-}
-  to{
-    /* Positioning  Properties*/
-    left:150%;
-}
-`;
-
-const OfferTag = styled.p`
-  /* Positioning  Properties*/
-  position: relative;
-  /* Display and Box Model  Properties*/
-  border-radius: 12px;
-  padding: 4px 8px;
-  /* Color  Properties*/
-  background-color: #424b5a;
-  color: #fff;
-  /* Text  Properties*/
-  font-size: 12px;
-  /* Other Properties */
-  overflow: hidden;
-  /* Pseudo Class Properties*/
-  &::after {
-    /* Positioning  Properties*/
-    position: absolute;
-    top: -10px;
-    left: -16px;
-    transform: translate(-50%, -50%);
-    transform: skew(-35deg);
-    /* Display and Box Model  Properties*/
-    box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.05);
-    width: 16px;
-    height: 40px;
-    /* Color  Properties*/
-    background-color: red;
-    background: rgba(255, 255, 255, 0.2);
-    /* Other Properties */
-    content: "";
-    /* Animation Properties */
-    animation: ${ShimmerAnimation} 1.25s ease-in-out infinite;
-  }
-`;
-
 const BtnLinkWrapper = styled.div`
   /* Display and Box Model  Properties*/
   display: flex;
@@ -161,19 +116,11 @@ const BtnLinkWrapper = styled.div`
   }
 `;
 
-const AddToCart = styled.button`
-  /* Display and Box Model  Properties*/
-  border: 0;
-  border-radius: 5px;
-  margin-bottom: 8px;
-  padding: 12px 0;
-  /* Color  Properties*/
-  background-color: #424b5a;
-  /* Text  Properties*/
-  color: #fff;
-  /* Other Properties */
-  outline: 0;
-  cursor: pointer;
+const AddToCart = styled(BtnLink.Solid).attrs((props) => {
+  props.$rounded = 4;
+  props.$margin = [0, 0];
+  props.$padding = [8, 32];
+})`
   /*  Media Query */
   @media screen and (min-width: 420px) {
     /* Display and Box Model  Properties*/
@@ -182,18 +129,37 @@ const AddToCart = styled.button`
   }
 `;
 
-const MoreDetails = styled(LinkRouter)`
-  /* Display and Box Model  Properties*/
-  border: 1px solid #424b5a;
-  border-radius: 2.5px;
-  margin-bottom: 4px;
-  padding: 4px 8px;
-  /* Color  Properties*/
-  background-color: transparent;
-  /* Text  Properties*/
-  color: #424b5a;
+const MoreDetails = styled(BtnLink.Ghost).attrs((props) => {
+  props.$rounded = 4;
+  props.$margin = [0, 0];
+  props.$padding = [8, 32];
+})`
   /* Other Properties */
-  outline: 0;
+  overflow: hidden;
+  /* Pseudo Properties */
+  &:hover {
+    /* Color Properties */
+    color: var(--col-neutral-white);
+    /* Text Properties */
+    font-weight: bolder;
+  }
+  &:after {
+    /* Positioning Properties */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 200ms ease-in-out;
+    z-index: -9;
+    /* Display and Box Model  Properties*/
+    content: "";
+    width: 0;
+    height: 100%;
+    background: var(--col-accent);
+  }
+  &:hover:after {
+    /* Display and Box Model  Properties*/
+    width: 100%;
+  }
   /*  Media Query */
   @media screen and (min-width: 420px) {
     margin: 0;

@@ -20,7 +20,7 @@ const SidebarContainer = styled.section`
   flex-direction: column;
   justify-content: space-evenly;
   /* Color  Properties*/
-  background: #333;
+  background: var(--col-secondary);
   color: #fff;
   /* Other  Properties*/
   transition: 250ms ease-in-out;
@@ -46,6 +46,8 @@ const CloseBtnWrapper = styled.div`
 `;
 
 const CloseMenuBtn = styled(MdClose)`
+  /* Color Properties */
+  color: var(--col-text-light);
   /* Text  Properties*/
   font-size: 34px;
 `;
@@ -62,6 +64,8 @@ const LinkStyle = css`
   padding: 20px;
   margin: 8px 0;
   display: block;
+  /* Color Properties */
+  color: var(--col-text-light);
   /* Text  Properties*/
   font-size: 18px;
   text-align: center;
@@ -72,8 +76,8 @@ const LinkStyle = css`
     /* Text  Properties*/
     font-weight: 700;
     /* Color Properties */
-    background-color: #e5e5e5;
-    color: #333;
+    background-color: var(--col-accent);
+    color: var(--col-text-light);
   }
   /* Media Query */
   @media screen and (max-width: 768px) and (orientation: landscape) {

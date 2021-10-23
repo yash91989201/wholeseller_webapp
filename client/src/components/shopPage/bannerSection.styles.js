@@ -6,6 +6,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import {
   defaultContainer,
   defaultHeading,
+  BtnLink,
 } from "components/shared/shared.styles";
 
 const Container = styled(defaultContainer)``;
@@ -70,7 +71,7 @@ const SlideControl = styled.div`
   justify-content: space-between;
   align-items: center;
   /* Color  Properties*/
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--col-neutral-black);
   color: #fff;
   /* Media Query*/
   @media screen and (max-width: 768px) {
@@ -136,7 +137,7 @@ const TextWrapper = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   /* Color  Properties*/
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: hsla(0, 0%, 96%, 0.75);
   /* Text  Properties*/
   text-align: center;
   /* Media Query*/
@@ -161,15 +162,17 @@ const Text = styled.p`
 const BtnLinkWrapper = styled.div`
   /* Display and Box Model  Properties*/
   margin: 24px 0;
+  display: grid;
+  place-items: center;
 `;
 
-const BtnLinkRouter = styled(LinkRouter)`
+const BtnLinkRouter = styled(BtnLink.Solid).attrs((props) => {
+  props.$rounded = 4;
+  props.$margin = [0, 0];
+  props.$padding = [8, 16];
+})`
   /* Display and Box Model  Properties*/
-  border-radius: 5px;
-  padding: 8px 24px;
-  /* Color  Properties*/
-  background-color: #424b5a;
-  color: #fff;
+  /* width: 50%; */
 `;
 
 const ArrowStyling = css`
