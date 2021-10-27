@@ -6,7 +6,6 @@ import {
   defaultContainer,
   defaultHeading,
   makeUnselectable,
-  BtnLink,
 } from "components/shared/shared.styles";
 
 const Container = styled(defaultContainer)`

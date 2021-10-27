@@ -31,11 +31,10 @@ const ProductPage = () => {
         isLoggedIn={isLoggedIn}
         isAdmin={isAdmin}
       />
-      {/* <ProductInfo slides={SliderData} />
+      <ProductInfo slides={SliderData} />
       <ProductReview />
-      <SimilarProduct />
-      <Footer /> */}
-      <ProductReview />
+      {/* <SimilarProduct /> */}
+      <Footer />
     </>
   );
 };

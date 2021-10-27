@@ -6,7 +6,6 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import {
   defaultContainer,
   defaultHeading,
-  BtnLink,
 } from "components/shared/shared.styles";
 
 const Container = styled(defaultContainer)``;

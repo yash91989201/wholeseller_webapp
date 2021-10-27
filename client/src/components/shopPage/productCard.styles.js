@@ -103,7 +103,6 @@ const Discount = styled.sup`
 const BtnLinkWrapper = styled.div`
   /* Display and Box Model  Properties*/
   display: flex;
-  align-items: center;
   /* Media Query*/
   @media screen and (max-width: 420px) {
     /* Display and Box Model  Properties*/
@@ -146,8 +145,9 @@ const MoreDetails = styled(LinkRouter)`
   padding: 4px 8px;
   /* Color  Properties*/
   background-color: transparent;
-  /* Text  Properties*/
   color: #424b5a;
+  /* Text  Properties*/
+  text-align: center;
   /* Other Properties */
   outline: 0;
   /*  Media Query */

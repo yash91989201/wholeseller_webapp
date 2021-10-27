@@ -24,23 +24,33 @@ import {
   Category,
   VariantWrapper,
   Variant,
+  MobileNavigation,
+  NavLink,
   ProductDescription,
   DescriptionHeading,
   DescriptionText,
   ProductSpecification,
+  SpecTable,
+  TableRow,
+  SpecHeader,
+  SpecDescription,
   Heading,
   LeftArrow,
   RightArrow,
+  UpArrow,
 } from "./productInfo.styles.js";
 
+import { useScrollToTop } from "customHooks";
+
 import { SliderData } from "components/shopPage/sliderData.js";
+
 const productPrice = 125.2;
 const onOffer = true;
 const discountAmount = 25;
 const ProductPage = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
-
+  const [isVisible, scrollToTop] = useScrollToTop(520);
   const toggleSlide = (slideDirection, slideIndex) => {
     if (slideDirection === "prevSlide") {
       setCurrent(current === 0 ? length - 1 : current - 1);
@@ -59,7 +69,7 @@ const ProductPage = ({ slides }) => {
         <ProductImageContainer>
           <ImageWrapper>
             <Image src={SliderData[current].image} />
-            <SlideControl data-head="2">
+            <SlideControl>
               <LeftArrow
                 onClick={() => {
                   toggleSlide("prevSlide");
@@ -94,9 +104,54 @@ const ProductPage = ({ slides }) => {
             ))}
           </ImagePreviewWrapper>
         </ProductImageContainer>
+        <MobileNavigation $setVisiblity={isVisible}>
+          <NavLink
+            to="productDescription"
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact="true"
+            offset={-120}
+          >
+            Description
+          </NavLink>
+          <NavLink
+            to="productSpecification"
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact="true"
+            offset={-110}
+          >
+            Specs
+          </NavLink>
+          <NavLink
+            to="userReviews"
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact="true"
+            offset={-100}
+          >
+            Reviews
+          </NavLink>
+
+          <NavLink $btn={true} onClick={scrollToTop}>
+            <UpArrow />
+          </NavLink>
+        </MobileNavigation>
         <ProductDetails>
           <ProductName>Samsung Galaxy Note 10 PDA</ProductName>
-          <ReviewLinkScroll>See Reviews</ReviewLinkScroll>
+          <ReviewLinkScroll
+            to="userReviews"
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact="true"
+            offset={-120}
+          >
+            See Reviews
+          </ReviewLinkScroll>
           <ProductPrice>
             <Price>
               ₹{productPrice}
@@ -112,8 +167,8 @@ const ProductPage = ({ slides }) => {
             )}
           </ProductPrice>
           <BtnLinkWrapper>
-            <AddToCart>Add To Cart</AddToCart>
             <BuyNow>Buy Now</BuyNow>
+            <AddToCart>Add To Cart</AddToCart>
           </BtnLinkWrapper>
           <ProductVariant>
             <VariantWrapper>
@@ -129,7 +184,8 @@ const ProductPage = ({ slides }) => {
               <Variant $variantActive={true}>12GB</Variant>
             </VariantWrapper>
           </ProductVariant>
-          <ProductDescription>
+
+          <ProductDescription id="productDescription">
             <DescriptionHeading>Description :</DescriptionHeading>
             <DescriptionText>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum
@@ -137,8 +193,26 @@ const ProductPage = ({ slides }) => {
               explicabo asperiores voluptatem aperiam qui repudiandae id iusto
             </DescriptionText>
           </ProductDescription>
-          <ProductSpecification>
+          <ProductSpecification id="productSpecification">
             <Heading>Product Specifications</Heading>
+            <SpecTable>
+              <TableRow>
+                <SpecHeader>Model Number</SpecHeader>
+                <SpecDescription>MZB08T8IN</SpecDescription>
+              </TableRow>
+              <TableRow>
+                <SpecHeader>Model Name </SpecHeader>
+                <SpecDescription>X3 Pro</SpecDescription>
+              </TableRow>
+              <TableRow>
+                <SpecHeader>Color </SpecHeader>
+                <SpecDescription>Steel Blue</SpecDescription>
+              </TableRow>
+              <TableRow>
+                <SpecHeader>SIM Type </SpecHeader>
+                <SpecDescription>Dual Sim</SpecDescription>
+              </TableRow>
+            </SpecTable>
           </ProductSpecification>
         </ProductDetails>
       </Wrapper>

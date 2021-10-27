@@ -1,5 +1,5 @@
 const SimilarProducts = () => {
-  return <div></div>;
+  return <div id="similarProducts"></div>;
 };
 
 export default SimilarProducts;
