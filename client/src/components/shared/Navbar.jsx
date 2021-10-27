@@ -27,7 +27,7 @@ import {
   LogOutIcon,
 } from "./navbar.styles";
 
-import useOnClickOutside from "customHooks/useOnClickOutside";
+import { useOnClickOutside } from "customHooks";
 
 const Navbar = ({ toggleMenuState, isLoggedIn, isAdmin }) => {
   const ref = useRef();
@@ -52,7 +52,7 @@ const Navbar = ({ toggleMenuState, isLoggedIn, isAdmin }) => {
                 duration={500}
                 spy={true}
                 exact="true"
-                offset={-120}
+                offset={-40}
               >
                 HOW IT WORKS
               </NavLinkScroll>
@@ -66,7 +66,7 @@ const Navbar = ({ toggleMenuState, isLoggedIn, isAdmin }) => {
                 duration={500}
                 spy={true}
                 exact="true"
-                offset={-255}
+                offset={-40}
               >
                 CONTACT
               </NavLinkScroll>

@@ -90,7 +90,7 @@ const defaultHeading = styled.h1`
   /* Color  Properties*/
   color: var(--col-neutral-black);
   /* Text  Properties*/
-  font-size: clamp(24px, 32px, 8vh);
+  font-size: clamp(24px, 8vw, 32px);
   text-align: center;
 `;
 

@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Link as LinkRouter } from "react-router-dom";
+import { Link as LinkScroll } from "react-scroll";
 import { GoThreeBars } from "react-icons/go";
 import { FaUserCircle } from "react-icons/fa";
 import { IoIosNotificationsOutline } from "react-icons/io";
@@ -75,7 +76,7 @@ const NavItem = styled.li`
   margin: 0 16px;
 `;
 
-const NavLinkScroll = styled(LinkRouter)`
+const NavLinkCss = css`
   /* Positioning  Properties*/
   position: relative;
   /* Display and Box Model  Properties*/
@@ -94,7 +95,8 @@ const NavLinkScroll = styled(LinkRouter)`
   /* Animation Properties */
   transition: all 200ms ease-in;
   /* Pseudo Class Properties*/
-  &:hover {
+  &:hover,
+  &.active {
     transform: scale(1.0625) translateY(-2px);
     box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 20px -5px;
   }
@@ -103,37 +105,13 @@ const NavLinkScroll = styled(LinkRouter)`
       rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     transform: scale(0.96);
   }
+  /* Other Properties */
+  cursor: pointer;
 `;
 
-const NavLinkRouter = styled(LinkRouter)`
-  /* Positioning  Properties*/
-  position: relative;
-  /* Display and Box Model  Properties*/
-  border-radius: 24px;
-  margin: 0px;
-  padding: 8px 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* Color  Properties*/
-  background-color: var(--col-accent);
-  color: #fff;
-  /* Animation Properties */
-  transition: all 200ms ease-in;
-  /* Pseudo Class Properties*/
-  &:hover {
-    transform: scale(1.0625) translateY(-2px);
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 20px -5px;
-  }
-  &:active {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-    transform: scale(0.96);
-  }
-  /* Text Properties */
-  font-size: 14px;
-  font-weight: bold;
-`;
+const NavLinkScroll = styled(LinkScroll)(NavLinkCss);
+
+const NavLinkRouter = styled(LinkRouter)(NavLinkCss);
 
 const BtnLinkWrap = styled.div`
   /* Display and Box Model  Properties*/
@@ -227,7 +205,6 @@ const NotificationCount = styled.span`
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  /* padding: 0 6px; */
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -243,7 +220,7 @@ const UserAccountDropdown = styled.div`
   /* Positioning  Properties*/
   position: absolute;
   z-index: 9;
-  top: 40px;
+  top: 48px;
   right: -32px;
   transform: ${({ $userDropdown }) =>
     $userDropdown ? "translateY(16px)" : "translateY(-568px)"};
@@ -305,10 +282,11 @@ const UserEmail = styled.p`
 `;
 
 const DropDownLink = styled(LinkRouter)`
+  /* Positioning  Properties*/
+  position: relative;
   /* Display and Box Model  Properties*/
   border-radius: 4px;
-  margin: 8px 0;
-  padding: 12px 0;
+  padding: 16px 0;
   display: flex;
   align-items: center;
   /* Pseudo Class Properties*/

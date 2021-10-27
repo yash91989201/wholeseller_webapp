@@ -17,10 +17,10 @@ const SidebarContainer = styled.section`
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-flow: column nowrap;
+  justify-content: space-around;
   /* Color  Properties*/
-  background: var(--col-secondary);
+  background: #333;
   color: #fff;
   /* Other  Properties*/
   transition: 250ms ease-in-out;
@@ -103,14 +103,6 @@ const SidebarBtnLink = styled(LinkRouter)`
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 1.5px;
-  /* Pseudo Class  Properties*/
-  &:hover {
-    /* Color Properties */
-    background-color: #f4f4f4;
-    color: #333;
-    /* Text Properties */
-    font-size: 20px;
-  }
   /* Media Query */
   @media screen and (max-width: 768px) and (orientation: landscape) {
     /* Display and Box Model  Properties*/
