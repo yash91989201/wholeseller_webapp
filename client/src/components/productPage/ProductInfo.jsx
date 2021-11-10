@@ -148,7 +148,7 @@ const ProductPage = ({ slides }) => {
             duration={500}
             spy={true}
             exact="true"
-            offset={-120}
+            offset={-100}
           >
             See Reviews
           </ReviewLinkScroll>

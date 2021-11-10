@@ -54,7 +54,7 @@ const OfferTag = styled.p`
   position: relative;
   /* Display and Box Model  Properties*/
   border-radius: 12px;
-  padding: 4px 8px;
+  padding: 4px 6px;
   /* Color  Properties*/
   background-color: #424b5a;
   color: #fff;

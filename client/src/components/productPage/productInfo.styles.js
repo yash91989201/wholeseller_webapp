@@ -60,7 +60,7 @@ const ImageWrapper = styled.div`
   /* Media Query */
   @media screen and (min-width: 1024px) {
     /* Display and Box Model  Properties*/
-    border: 1px solid #424b5a;
+    border: 1.5px solid #d9d9d9;
     width: 100%;
     height: 380px;
   }
@@ -257,9 +257,10 @@ const MobileNavigation = styled.section`
   /* Positioning Properties */
   position: fixed;
   top: 80px;
+  z-index: 99;
   /* Display and Box Model  Properties*/
   width: 100%;
-  height: 40px;
+  height: 48px;
   display: ${({ $setVisiblity }) => ($setVisiblity ? "flex" : "none")};
   align-items: center;
   /* Color Properties */
@@ -367,7 +368,7 @@ const UpArrow = styled(BsArrowBarUp)`
   background-color: #fff;
   color: #000;
   /* Text Properties */
-  font-size: 32px;
+  font-size: 40px;
 `;
 
 export {

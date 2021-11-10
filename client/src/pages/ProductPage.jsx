@@ -33,7 +33,7 @@ const ProductPage = () => {
       />
       <ProductInfo slides={SliderData} />
       <ProductReview />
-      {/* <SimilarProduct /> */}
+      <SimilarProduct />
       <Footer />
     </>
   );
