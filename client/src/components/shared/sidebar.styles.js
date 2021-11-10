@@ -17,8 +17,8 @@ const SidebarContainer = styled.section`
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-flow: column nowrap;
+  justify-content: space-around;
   /* Color  Properties*/
   background: #333;
   color: #fff;
@@ -46,6 +46,8 @@ const CloseBtnWrapper = styled.div`
 `;
 
 const CloseMenuBtn = styled(MdClose)`
+  /* Color Properties */
+  color: var(--col-text-light);
   /* Text  Properties*/
   font-size: 34px;
 `;
@@ -62,6 +64,8 @@ const LinkStyle = css`
   padding: 20px;
   margin: 8px 0;
   display: block;
+  /* Color Properties */
+  color: var(--col-text-light);
   /* Text  Properties*/
   font-size: 18px;
   text-align: center;
@@ -72,8 +76,8 @@ const LinkStyle = css`
     /* Text  Properties*/
     font-weight: 700;
     /* Color Properties */
-    background-color: #e5e5e5;
-    color: #333;
+    background-color: var(--col-accent);
+    color: var(--col-text-light);
   }
   /* Media Query */
   @media screen and (max-width: 768px) and (orientation: landscape) {
@@ -99,14 +103,6 @@ const SidebarBtnLink = styled(LinkRouter)`
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 1.5px;
-  /* Pseudo Class  Properties*/
-  &:hover {
-    /* Color Properties */
-    background-color: #f4f4f4;
-    color: #333;
-    /* Text Properties */
-    font-size: 20px;
-  }
   /* Media Query */
   @media screen and (max-width: 768px) and (orientation: landscape) {
     /* Display and Box Model  Properties*/

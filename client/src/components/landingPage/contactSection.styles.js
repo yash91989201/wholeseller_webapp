@@ -6,7 +6,7 @@ import { defaultContainer, defaultHeading } from "../shared/shared.styles";
 
 const Container = styled(defaultContainer)`
   /* Display and Box Model  Properties*/
-  padding: 24px 0;
+  height: calc(100vh - 80px);
   flex-flow: row nowrap;
 `;
 
@@ -74,7 +74,7 @@ const IconWrapper = styled.span`
   justify-content: center;
   align-content: center;
   /* Color  Properties*/
-  background-color: #f2f5f7;
+  background-color: var(--col-primary-light);
 `;
 
 const IconStyling = css`
@@ -84,7 +84,7 @@ const IconStyling = css`
   left: 50%;
   transform: translate(-50%, -50%);
   /* Color  Properties*/
-  color: #424b5a;
+  color: var(--col-accent);
   /* Text  Properties*/
   font-size: 24px;
 `;
@@ -97,7 +97,7 @@ const Type = styled.p`
   /* Display and Box Model  Properties*/
   padding: 8px 0;
   /* Color  Properties*/
-  color: #505d68;
+  color: var(--col-primary-dark);
 `;
 const Detail = styled.h4`
   /* Display and Box Model  Properties*/

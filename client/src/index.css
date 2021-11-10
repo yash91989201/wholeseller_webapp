@@ -1,9 +1,21 @@
 :root {
-  --primary-color: #fff;
-  --secondary-color: #000;
-  --accent-color: #e4e4e4;
-  --semantic-color: #f5f5f5;
-  --neutral-color: #f7f7f7;
+  /* Primary Color */
+  --col-primary: hsl(180, 10%, 15%);
+  --col-navbar-bg: hsl(0, 0%, 96%);
+  /* Secondary Color */
+  --col-secondary: hsl(165, 80%, 43%);
+  /* Accent Color */
+  --col-accent: hsl(0, 84%, 64%);
+  --col-accent-light: hsl(10, 50%, 80%);
+  /* Neutral Colors */
+  --col-neutral-white: hsl(60, 40%, 95%);
+  --col-neutral-black: hsl(0, 0%, 9%);
+  --col-neutral-grey: hsl(0, 0%, 73%);
+  /* Semantic Colors */
+  --col-semantic-error: hsl(355, 100%, 64%);
+  --col-semantic-warning: hsl(39, 100%, 50%);
+  --col-semantic-info: hsl(210, 100%, 56%);
+  --col-semantic-success: hsl(145, 67%, 51%);
 }
 
 * {

@@ -11,7 +11,7 @@ import {
 const Container = styled(defaultContainer)`
   ${makeUnselectable}
   /* Display and Box Model  Properties*/
-  flex-flow:column nowrap;
+  flex-flow: column nowrap;
 `;
 
 const Wrapper = styled.div`

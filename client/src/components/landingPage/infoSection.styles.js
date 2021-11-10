@@ -9,7 +9,8 @@ import {
 const Container = styled(defaultContainer)`
   ${makeUnselectable}
   /* Display and Box Model  Properties*/
-    flex-flow:column nowrap;
+  height:calc(100vh - 80px);
+  flex-flow: column nowrap;
 `;
 
 const Wrapper = styled.div`

@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
-import { Link as LinkScroll } from "react-scroll";
 import { Link as LinkRouter } from "react-router-dom";
+import { Link as LinkScroll } from "react-scroll";
 import { GoThreeBars } from "react-icons/go";
 import { FaUserCircle } from "react-icons/fa";
 import { IoIosNotificationsOutline } from "react-icons/io";
@@ -22,11 +22,14 @@ const NavbarContainer = styled.section`
   height: 80px;
   display: flex;
   justify-content: center;
-  /* Color  Properties*/
-  background-color: #f5f5f5;
+  /* Color Properties */
+  background-color: var(--col-navbar-bg);
+  color: var(--col-neutral-black);
 `;
 
 const MenuBtn = styled(GoThreeBars)`
+  /* Color Properties */
+  color: var(--col-text-light);
   /* Text  Properties*/
   font-size: 28px;
   /* Media Query */
@@ -73,20 +76,46 @@ const NavItem = styled.li`
   margin: 0 16px;
 `;
 
-const NavLinkStyle = css`
+const NavLinkCss = css`
+  /* Positioning  Properties*/
+  position: relative;
   /* Display and Box Model  Properties*/
+  border-radius: 24px;
+  margin: 0px;
   padding: 8px 16px;
-  /* Text  Properties*/
-  font-size: 15px;
-  /* Other  Properties*/
-  cursor: pointer;
-  /* Pseudo Class Properties */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Color  Properties*/
+  background-color: var(--col-accent);
+  color: #fff;
+  /* Font Properties */
+  font-size: 14px;
+  font-weight: bold;
+  /* Animation Properties */
+  transition: all 200ms ease-in;
+  /* Pseudo Class Properties*/
   &:hover,
   &.active {
-    border-radius: 24px;
-    background-color: #424b5a;
-    color: #fff;
+    transform: scale(1.0625) translateY(-2px);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 20px -5px;
   }
+  &:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    transform: scale(0.96);
+  }
+  /* Other Properties */
+  cursor: pointer;
+`;
+
+const NavLinkScroll = styled(LinkScroll)(NavLinkCss);
+
+const NavLinkRouter = styled(LinkRouter)(NavLinkCss);
+
+const BtnLinkWrap = styled.div`
+  /* Display and Box Model  Properties*/
+  display: flex;
   /* Media Query */
   @media screen and (max-width: 1024px) {
     /* Display and Box Model  Properties*/
@@ -94,54 +123,93 @@ const NavLinkStyle = css`
   }
 `;
 
-const NavLinkScroll = styled(LinkScroll)(NavLinkStyle);
-const NavLinkRouter = styled(LinkRouter)(NavLinkStyle);
-
-const BtnLinkWrap = styled.div`
-  /* Display and Box Model  Properties*/
-  display: flex;
-  /* Media Query*/
-  @media screen and (max-width: 1024px) {
-    /* Display and Box Model  Properties*/
-    display: none;
-  }
-`;
-
-const NavBtnLink = styled(LinkRouter)`
+const LogInBtn = styled(LinkRouter)`
   /* Positioning  Properties*/
   position: relative;
   /* Display and Box Model  Properties*/
-  outline: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Color Properties */
-  color: #333333;
-  /* Text  Properties*/
-  font-size: 18px;
-  /* Pseudo Class Properties */
+  border: 1.125px solid var(--col-accent);
+  border-radius: 8px;
+  margin: 0px;
+  padding: 6px 24px;
+  /* Color  Properties*/
+  color: var(--col-neutral-black);
+  /* Animation Properties */
+  transition: all 200ms ease-in;
+  /* Pseudo Class Properties*/
+  /* Other Properties */
+  overflow: hidden;
+  /* Pseudo Properties */
   &:hover {
-    border-bottom: 1px solid #424b5a;
-    color: #424b5a;
+    /* Color Properties */
+    color: var(--col-neutral-white);
+    /* Text Properties */
+    font-weight: bolder;
+  }
+  &:after {
+    /* Positioning Properties */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 300ms ease-in-out;
+    z-index: -9;
+    /* Display and Box Model  Properties*/
+    content: "";
+    width: 0;
+    height: 100%;
+    background: #ff003b;
+  }
+  &:hover:after {
+    /* Display and Box Model  Properties*/
+    width: 100%;
   }
 `;
 
-const NotificationCount = styled.p`
+const UserActionBtn = styled(LinkRouter)`
+  /* Positioning  Properties*/
+  position: relative;
+  transform: ${({ $active }) => ($active ? `scale(1.125)` : "")};
+  /* Display and Box Model  Properties*/
+  box-shadow: ${({ $active }) =>
+    $active
+      ? `0 15px 25px -4px rgba(0, 0, 0, 0.2),
+    inset 0 -8px 30px 1px rgba(255, 255, 255, 0.5),
+    0 -10px 15px -1px rgba(255, 255, 255, 0.5)`
+      : ""};
+  border-radius: 50%;
+  margin: 8px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Color  Properties*/
+  background-color: var(--col-secondary);
+  color: var(--col-neutral-white);
+  /* Animation Properties */
+  transition: all 200ms ease-in;
+  /* Pseudo Class Properties*/
+  &:hover {
+    transform: scale(1.125);
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.2),
+      inset 0 -8px 30px 1px rgba(255, 255, 255, 0.5),
+      0 -10px 15px -1px rgba(255, 255, 255, 0.5);
+  }
+`;
+
+const NotificationCount = styled.span`
   /* Positioning  Properties*/
   position: absolute;
-  top: -4px;
+  top: 2px;
   right: -18px;
   transform: translate(-50%, -50%);
   /* Display and Box Model  Properties*/
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   /* Color  Properties*/
-  background-color: red;
+  background-color: var(--col-semantic-error);
   color: #ffffff;
   /* Text Properties */
   font-size: 20px;
@@ -151,16 +219,18 @@ const NotificationCount = styled.p`
 const UserAccountDropdown = styled.div`
   /* Positioning  Properties*/
   position: absolute;
-  top: 40px;
+  z-index: 9;
+  top: 48px;
   right: -32px;
   transform: ${({ $userDropdown }) =>
-    $userDropdown ? "scaleY(1)" : "scaleY(0)"};
+    $userDropdown ? "translateY(16px)" : "translateY(-568px)"};
   transform-origin: top;
   /* Display and Box Model  Properties*/
+  overflow: hidden;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  border-radius: 8px;
-  width: 275px;
+  border-radius: 12px;
+  width: 300px;
   display: flex;
   flex-flow: column nowrap;
   /* Color  Properties*/
@@ -205,35 +275,45 @@ const UserName = styled.p`
 
 const UserEmail = styled.p`
   /* Display and Box Model  Properties*/
-  margin: 6px 0;
+  margin: 8px 0;
   /* Text  Properties*/
   font-size: 14px;
   font-weight: 600;
 `;
 
 const DropDownLink = styled(LinkRouter)`
+  /* Positioning  Properties*/
+  position: relative;
   /* Display and Box Model  Properties*/
   border-radius: 4px;
-  margin: 8px 0;
-  padding: 12px 0;
+  padding: 16px 0;
   display: flex;
   align-items: center;
   /* Pseudo Class Properties*/
+  &:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -9;
+    width: 0;
+    height: 100%;
+    background: var(--col-accent);
+    transition: all 200ms ease-in-out;
+  }
   &:hover {
-    /* Positioning  Properties*/
-    transform: translateX(12px) scale(1.0625);
-    transform-origin: left;
-    transition: all 175ms ease-in-out;
-    /* Color  Properties*/
-    background-color: palegoldenrod;
-    /* Text  Properties*/
-    font-weight: 600;
+    color: var(--col-neutral-white);
+    font-weight: 700;
+  }
+  &:hover:after {
+    width: 100%;
   }
 `;
 
 const IconStyling = css`
   /* Text  Properties*/
-  font-size: 24px;
+  font-size: 22px;
+  font-weight: lighter;
   /* Other  Properties*/
   cursor: pointer;
 `;
@@ -262,7 +342,8 @@ export {
   NavLinkScroll,
   NavLinkRouter,
   BtnLinkWrap,
-  NavBtnLink,
+  LogInBtn,
+  UserActionBtn,
   MenuBtn,
   UserAccountDropdown,
   UserDetails,

@@ -87,6 +87,7 @@ const JoinBtn = styled(LinkRouter)`
   letter-spacing: 1.25px;
   text-align: center;
 `;
+
 const KnowMoreBtn = styled(LinkScroll)`
   /* Display and Box Model  Properties*/
   margin-top: 16px;
